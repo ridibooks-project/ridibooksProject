@@ -1,0 +1,172 @@
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.container{
+    font-size: 14px;
+}
+input{
+    color: inherit;
+    letter-spacing: inherit;
+    font-family: inherit;
+    appearance: none;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* 헤더 */
+.hd_wrap{
+    width: 100%;
+    background-color: #1F8CE6;
+}
+header{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+nav{
+    padding: 16px 16px 24px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.hd_nav_box{
+    display: flex;
+    flex-direction: row;
+}
+/* 로고 */
+.logo_box{
+    flex: none;
+    order: 1;
+    min-height: 30px;
+    margin-top: 10px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    display: flex;
+}
+.rb_logo, .rs_logo{
+    text-align: center;
+    display: flex;
+}
+.rb_logo + .rs_logo::before{
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+    background-color: white;
+    opacity: 0.3;
+}
+.rb_logo_text{
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+    width: 119px;
+    height: 18px;
+    fill: white;
+}
+.rs_logo_text{
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+    fill: white;
+    opacity: 0.6;
+    width: 100px;
+    height: 16px;
+}
+/* 로고 */
+/* 검색 */
+.h_ip_box{
+    flex: 1;
+    max-width: 340px;
+    order: 2;
+    z-index: 7000;
+}
+.h_ip_l i{
+    color: #B3B8BD;
+    flex: 0 0 auto;
+    font-size: 20px;
+    padding: 0 6px;
+    opacity: 1;
+    order: 1;
+}
+.h_ip_wrap{
+    outline: none;
+}
+.h_ip_l{
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+.h_ip_search{
+    flex: 1;
+    height: 36px;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    order: 2;
+}
+.h_ip_search:focus{
+    outline: none;
+}
+
+/* 검색 */
+/* 유저 버튼 */
+.h_btn_box{
+    display: flex;
+    text-align: center;
+    flex: 1;
+    order: 3;
+    margin-left: auto;
+    justify-content: flex-end;
+    align-items: center;
+}
+.h_btn_box li{
+    margin: 0 3px;
+}
+.login_btn{
+    color: #1F8CE6;
+    width: 100px;
+    background-color: #ffffff;
+    padding: 6px 14px;
+    font-size: .90em;
+    font-weight: 600;
+    border-radius: 3px;
+}
+.join_btn{
+    color: #ffffff;
+    width: 100px;
+    background-color: #1F8CE6;
+    border: 1px solid #99D1FF;
+    padding: 6px 14px;
+    font-size: .90em;
+    font-weight: 600;
+    border-radius: 3px;
+}
+/* 유저 버튼 */
+/* 메인 메뉴 */
+.hd_mm_wrap{
+    display: flex;
+    text-align: center;
+}
+.menu_navi{
+    padding: 10px;
+    margin: 0 20px;
+    color: #ffffff;
+    font-size: 1.15em;
+    font-weight: 700;
+}
+.menu_navi i{
+    margin-right: 6px;
+    
+}
+.homeTab{
+    border-bottom: 3px solid #99D1FF;
+}
+/* 메인 메뉴 */
+/* 헤더 */
