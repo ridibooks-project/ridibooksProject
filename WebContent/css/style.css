@@ -154,7 +154,7 @@ nav{
     text-align: center;
 }
 .menu_navi{
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     margin: 0 20px;
     color: #ffffff;
     font-size: 1.15em;
@@ -168,7 +168,92 @@ nav{
     border-bottom: 3px solid #99D1FF;
 }
 /* 메인 메뉴 */
+
 /* 헤더 */
+/* 서브 메뉴 */
+.sub_menu{
+    border-bottom: 1px solid #ced0d3;   
+}
+.hd_sub_menu{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hd_sm_top{
+    text-align: center;
+    display: flex;
+    
+}
+
+.filter_icon{
+    width: 25px;
+    fill: #636C73;
+}
+.cg_menu{
+    padding: 10px;
+    margin: 0 16px;
+}
+.cg_menu_text{
+    padding-top: 14px;
+    color: #40474D;
+}
+.cg_menu_text a{
+    font-size: 1.1em;
+}
+.normal_cg{
+    font-weight: 600;
+    color: #0077D9;
+}
+
+/* 서브 메뉴 */
+/* 서브메뉴 하부 메뉴 */
+
+/* 서브메뉴 하부 메뉴 */
+
+/* 컨텐츠 */
+/* 이벤트 슬라이드 */
+.event_slide_tab{
+    max-width: 1000px;
+    position: relative;
+    text-align: center;
+}
+.event_box{
+    text-align: center;
+    margin: 0 auto;  
+}
+
+.swiper-wrapper{
+    display: flex;
+    max-width: 1000px;
+}
+.ev_pn_wrapper{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    text-align: center;
+    opacity: 0.7;
+    border-radius: 30px;
+    z-index: 1;
+}
+.ev_pn{
+    position: absolute;
+    top: 4px;
+    color: white;
+}
+
+.event_slide{
+    width: 430px;
+    height: 300px;
+    background-color: yellow;
+    color: black;
+}
+/* 이벤트 슬라이드 */
+
+/* 컨텐츠 */
+
 
 
 

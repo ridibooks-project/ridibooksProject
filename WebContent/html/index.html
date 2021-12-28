@@ -6,6 +6,7 @@
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>일반도서 - 리디북스</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -62,48 +63,104 @@
                     <li>
                         <div class="menu_navi homeTab">
                             <i class="fas fa-home"></i>
-                            <span>홈</span>
+                            <span class="ic_text">홈</span>
                         </div>
                     </li>
                     <li>
                         <div class="menu_navi noticeTab">
                             <i class="far fa-bell"></i>
-                            <span>알림</span>
+                            <span class="ic_text">알림</span>
                         </div>
                     </li>
                     <li>
                         <div class="menu_navi cartTab">
                             <i class="fas fa-shopping-cart"></i>
-                            <span>카트</span>
+                            <span class="ic_text">카트</span>
                         </div>
                     </li>
                     <li>
                         <div class="menu_navi mpTab">
                             <i class="far fa-user"></i>
-                            <span>마이리디</span>
+                            <span class="ic_text">마이리디</span>
                         </div>
                     </li>
                 </ul>
             </header>
         </div>
-        <div>
-            <ul class="hd_sm_wrap">
-                <li>
-                    <ul>
-                        <li></li>
-                        <li>일반</li>
-                        <li>로맨스</li>
-                        <li>판타지</li>
-                        <li>만화</li>
-                        <li>BL</li>
-                    </ul>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="sub_menu">
+            <div class="hd_sub_menu">
+                <ul class="hd_sm_wrap">
+                    <li>
+                        <ul class="hd_sm_top">
+                            <li>
+                                <div class="cg_menu">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="filter_icon">
+                                            <path d="M2 7.001h20V5H2v2.001zm3 6h14v-2H5v2zm3.999 6h6v-2h-6v2z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cg_menu cg_menu_text normal_cg">
+                                    <a href="#">일반</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cg_menu cg_menu_text rom_cg">
+                                    <a href="#">로맨스</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cg_menu cg_menu_text fan_cg">
+                                    <a href="#">판타지</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cg_menu cg_menu_text car_cg">
+                                    <a href="#">만화</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cg_menu cg_menu_text bl_cg">
+                                    <a href="#">BL</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         </div>
+
+        <section class="event_slide_tab">
+            <div class="event_box swiper-container">
+                <div class="event_wrapper swiper-wrapper">
+                    <div class="event_slide event1 swiper-slide">s10</div>
+                    <div class="event_slide event2 swiper-slide">s19</div>
+                    <div class="event_slide event3 swiper-slide">s18</div>
+                    <div class="event_slide event4 swiper-slide">s17</div>
+                    <div class="event_slide event5 swiper-slide">s16</div>
+                    <div class="event_slide event6 swiper-slide">s15</div>
+                    <div class="event_slide event7 swiper-slide">s14</div>
+                    <div class="event_slide event8 swiper-slide">s13</div>
+                    <div class="event_slide event9 swiper-slide">s12</div>
+                    <div class="event_slide event10 swiper-slide">s11</div>
+                </div>
+                <div class="ev_pn_wrapper">
+                    <div class="ev_pn swiper-pagination"></div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/39caf77dda.js" crossorigin="anonymous"></script>
+    <script src="../js/normal_event.js"></script>
 </body>
 
 </html>
