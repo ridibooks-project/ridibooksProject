@@ -410,35 +410,118 @@ nav{
 .newBook_tab{
     padding-top: 31px;
     padding-bottom: 36px;
-    background: url(https://static.ridicdn.net/_next/static/images/recommended_book_background@desktop-cf4f6e0….png) center center no-repeat #17202e;
+    background: url('../images/nbImg.png') left bottom no-repeat #17202e;
     background-size: contain;
-}
+    text-align: center;
+}   
 
 .nb_sw_wrapper{
-    width: 1050px;
+    text-align: center;
+    width: 1200px;
     position: relative;
     overflow: hidden;
     margin: 0 auto; 
 }
-.nb_ht{
 
+.nb_ht{
+    text-align: left;
+    margin-bottom: 20px;
+}
+.nb_ht span{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1.2em;
 }
 
 .nb_box{
-
+    width: 1400px;
 }
-
 .nb_wrapper{
-    width: 100%; 
-    display: flex;
+    width: 1050px;
 }
 .nb_slide{
-    width: 60px;
-    height: 150px;
-    background-color: white;
-    display: inline-block;
-    margin: 0 10px;
+    width: 160px;
 }
+
+.sbp_nb::after, .sbn_nb::after{
+    font-size: 15px;
+    color: #cccccc;
+}
+
+.sbn_nb{
+    padding-left: 9px;
+}
+
+.sbp_nb{
+    padding-right: 11px;
+}
+.prev_btn_nb{
+    left: 0;
+}
+
+.next_btn_nb{
+    right: 0;
+}
+.np_btn_controller{
+    width: 1200px;
+}
+/* 책표지 부분 */
+.nb_all_wrapper{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.nb_bc_wrapper{
+    display: flex;
+}
+.nb_img_wrapper{
+    text-align: center;
+}
+.nb_img_wrapper img{
+    width: 140px;
+    height: 207.66px;
+}
+.nb_bc_wrapper{
+    position: absolute;
+}
+/* 세일 아이콘 */
+.sale_ad{
+    padding-top: 4px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #59667A;
+    top: 2px;
+    left: 10px;
+    text-align: center;
+}
+.sale_text{
+    color:#ffffff;  
+}
+.sale_num{
+    font-weight: 800;
+    font-size: 1.1em;
+}
+/* 세일 아이콘 */
+/* 책표지 부분 */
+
+/* 책제목 저자 */
+.nb_int_text{
+    background-color: none;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 220px;
+
+}
+.nb_int_text h3, .nb_int_text p{
+    color: #ffffff;
+}
+/* 책제목 저자 */
 /* 새로나온책 탭 */
 
 
