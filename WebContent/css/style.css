@@ -331,41 +331,78 @@ nav{
 
 /* 아이콘 메뉴 - 일반페이지 */
 .ic_navi_tab{
-    padding-top: 20px;
+    padding: 30px 0;
+
 }
 .ic_navi_wrapper{
     position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
     text-align: center;
 }
 .ic_navi_box{
     display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.ic_navi_box li{
-    margin: 0 auto;
+.ic_list{
     position: relative;
+    width: 85px;
+    margin: 0 auto;
 }
 
 .ic_navi{
-    display: inline-block;
-    position: absolute;
+    text-align: center;
+    width: 100%;
 }
+
 .ic_wh{
     width: 44px;
     height: 44px;
-    flex: none;
 }
 
 .ic_box{
     width: 44px;
     height: 44px;
     top: 0;
+    left: 21px;
     position: absolute;
 }
 
+.ic_menu_text{  
+    font-size: .9em;
+    text-align: center;
+    color: #525A61;
+}
+/* 아이콘 색상 */
+.quickIcon1{
+    fill: #E8CB99;
+}
+.quickIcon2{
+    fill: #99D1CB;
+}
+.quickIcon3{
+    fill: #B9BEF1;
+}
+.quickIcon4{
+    fill: #99D1CB;
+}
+.quickIcon5{
+    fill: #F1C0A7;
+}
+.quickIcon6{
+    fill: #ABDCBA;
+}
+.quickIcon7{
+    fill: #D5ADEB;
+}
+.quickIcon8{
+    fill: #F0B9B9;
+}
+.quickIcon9{
+    fill: #BADBA1;
+}
 
+/* 아이콘 색상 */
 /* 아이콘 메뉴 - 일반페이지 */
 
 /* 컨텐츠 */
