@@ -1,0 +1,449 @@
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    font-size: 14px;
+}
+input{
+    color: inherit;
+    letter-spacing: inherit;
+    font-family: inherit;
+    appearance: none;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+section{
+    width: 100%;
+}
+/* 헤더 */
+.hd_wrap{
+    width: 100%;
+    background-color: #1F8CE6;
+}
+header{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+nav{
+    padding: 16px 16px 24px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.hd_nav_box{
+    display: flex;
+    flex-direction: row;
+}
+/* 로고 */
+.logo_box{
+    flex: none;
+    order: 1;
+    min-height: 30px;
+    margin-top: 10px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    display: flex;
+}
+.rb_logo, .rs_logo{
+    text-align: center;
+    display: flex;
+}
+.rb_logo + .rs_logo::before{
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+    background-color: white;
+    opacity: 0.3;
+}
+.rb_logo_text{
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+    width: 119px;
+    height: 18px;
+    fill: white;
+}
+.rs_logo_text{
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+    fill: white;
+    opacity: 0.6;
+    width: 100px;
+    height: 16px;
+}
+/* 로고 */
+/* 검색 */
+.h_ip_box{
+    flex: 1;
+    max-width: 340px;
+    order: 2;
+    z-index: 7000;
+}
+.h_ip_l i{
+    color: #B3B8BD;
+    flex: 0 0 auto;
+    font-size: 20px;
+    padding: 0 6px;
+    opacity: 1;
+    order: 1;
+}
+.h_ip_wrap{
+    outline: none;
+}
+.h_ip_l{
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+.h_ip_search{
+    flex: 1;
+    height: 36px;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    order: 2;
+}
+.h_ip_search:focus{
+    outline: none;
+}
+
+/* 검색 */
+/* 유저 버튼 */
+.h_btn_box{
+    display: flex;
+    text-align: center;
+    flex: 1;
+    order: 3;
+    margin-left: auto;
+    justify-content: flex-end;
+    align-items: center;
+}
+.h_btn_box li{
+    margin: 0 3px;
+}
+.login_btn{
+    color: #1F8CE6;
+    width: 100px;
+    background-color: #ffffff;
+    padding: 6px 14px;
+    font-size: .90em;
+    font-weight: 600;
+    border-radius: 3px;
+}
+.join_btn{
+    color: #ffffff;
+    width: 100px;
+    background-color: #1F8CE6;
+    border: 1px solid #99D1FF;
+    padding: 6px 14px;
+    font-size: .90em;
+    font-weight: 600;
+    border-radius: 3px;
+}
+/* 유저 버튼 */
+/* 메인 메뉴 */
+.hd_mm_wrap{
+    display: flex;
+    text-align: center;
+}
+.menu_navi{
+    padding: 0 10px 10px 10px;
+    margin: 0 20px;
+    color: #ffffff;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+.menu_navi i{
+    margin-right: 6px;
+    
+}
+.homeTab{
+    border-bottom: 3px solid #99D1FF;
+}
+/* 메인 메뉴 */
+
+/* 헤더 */
+/* 서브 메뉴 */
+.sub_menu{
+    border-bottom: 1px solid #ced0d3;   
+}
+.hd_sub_menu{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hd_sm_top{
+    text-align: center;
+    display: flex;
+    
+}
+
+.filter_icon{
+    width: 25px;
+    fill: #636C73;
+}
+.cg_menu{
+    padding: 10px;
+    margin: 0 16px;
+}
+.cg_menu_text{
+    padding-top: 14px;
+    color: #40474D;
+}
+.cg_menu_text a{
+    font-size: 1.1em;
+}
+.normal_cg{
+    font-weight: 600;
+    color: #0077D9;
+}
+
+/* 서브 메뉴 */
+/* 서브메뉴 하부 메뉴 */
+
+/* 서브메뉴 하부 메뉴 */
+
+/* 컨텐츠 */
+/* 이벤트 슬라이드 */
+.event_slide_tab{
+    padding-top: 30px;
+}
+
+.ev_sw_wrapper{
+    max-width: 1290px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.event_wrapper{
+    width: 100%; 
+    display: flex;
+    
+}
+.ev_pn_wrapper{
+    position: absolute;
+    bottom: 15px;
+    left: 63%;
+    width: 45px;
+    height: 20px;
+    background-color: black;
+    text-align: center;
+    opacity: 0.7;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+.ev_pn{
+    position: absolute;
+    top:0.9px;
+    color: white;
+    font-size: 12px;
+}
+
+.ev_pn::after{
+    font-weight: 800;
+}
+
+.sbp::after, .sbn::after{
+    font-size: 15px;
+    color: #cccccc;
+}
+.sbp{
+    padding-right: 11px;
+}
+
+.sbn{
+    padding-left: 9px;
+}
+.navi_btn_wrapper{
+    position: absolute;
+    z-index: 20;
+    top: 47%;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.navi_btn_wrapper:hover{
+    opacity: 0.8;
+}
+.next_btn{
+    right: 25%;
+}
+.prev_btn{
+    left: 25%;
+}
+.event_slide{
+    width: 430px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+/* 이벤트 카드뉴스 이미지 */
+.event1{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211229101547_1640740547185.jpg")
+}
+.event2{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211226145408_1640498048095.jpg")
+}
+.event3{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211124173939_1637743179827.jpg")
+}
+.event4{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211215020525_1639501525772.jpg")
+}
+.event5{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211201113233_1638325953584.jpg")
+}
+.event6{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211217093606_1639701366901.jpg")
+}
+.event7{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211227101820_1640567900464.jpg")
+}
+.event8{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211224141014_1640322614798.jpg")
+}
+.event9{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211216172659_1639643219461.jpg")
+}
+.event10{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211214105436_1639446876116.jpg")
+}
+
+/* 이벤트 카드뉴스 이미지 */
+/* 이벤트 슬라이드 */
+
+/* 아이콘 메뉴 - 일반페이지 */
+.ic_navi_tab{
+    padding: 30px 0;
+
+}
+.ic_navi_wrapper{
+    position: relative;
+    text-align: center;
+}
+.ic_navi_box{
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ic_list{
+    position: relative;
+    width: 85px;
+    margin: 0 auto;
+}
+
+.ic_navi{
+    text-align: center;
+    width: 100%;
+}
+
+.ic_wh{
+    width: 44px;
+    height: 44px;
+}
+
+.ic_box{
+    width: 44px;
+    height: 44px;
+    top: 0;
+    left: 21px;
+    position: absolute;
+}
+
+.ic_menu_text{  
+    font-size: .9em;
+    text-align: center;
+    color: #525A61;
+}
+/* 아이콘 색상 */
+.quickIcon1{
+    fill: #E8CB99;
+}
+.quickIcon2{
+    fill: #99D1CB;
+}
+.quickIcon3{
+    fill: #B9BEF1;
+}
+.quickIcon4{
+    fill: #99D1CB;
+}
+.quickIcon5{
+    fill: #F1C0A7;
+}
+.quickIcon6{
+    fill: #ABDCBA;
+}
+.quickIcon7{
+    fill: #D5ADEB;
+}
+.quickIcon8{
+    fill: #F0B9B9;
+}
+.quickIcon9{
+    fill: #BADBA1;
+}
+
+/* 아이콘 색상 */
+/* 아이콘 메뉴 - 일반페이지 */
+
+/* 새로나온책 탭 */
+
+.newBook_tab{
+    padding-top: 31px;
+    padding-bottom: 36px;
+    background: url(https://static.ridicdn.net/_next/static/images/recommended_book_background@desktop-cf4f6e0….png) center center no-repeat #17202e;
+    background-size: contain;
+}
+
+.nb_sw_wrapper{
+    width: 1050px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+.nb_ht{
+
+}
+
+.nb_box{
+
+}
+
+.nb_wrapper{
+    width: 100%; 
+    display: flex;
+}
+.nb_slide{
+    width: 60px;
+    height: 150px;
+    background-color: white;
+    display: inline-block;
+    margin: 0 10px;
+}
+/* 새로나온책 탭 */
+
+
+/* 컨텐츠 */
+
+
+
+
