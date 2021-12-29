@@ -226,7 +226,7 @@ nav{
     margin: 0 auto; 
 }
 
-.swiper-wrapper{
+.event_wrapper{
     width: 100%; 
     display: flex;
     
@@ -255,15 +255,15 @@ nav{
     font-weight: 800;
 }
 
-.swiper-button-prev::after, .swiper-button-next::after{
+.sbp::after, .sbn::after{
     font-size: 15px;
     color: #cccccc;
 }
-.swiper-button-prev{
+.sbp{
     padding-right: 11px;
 }
 
-.swiper-button-next{
+.sbn{
     padding-left: 9px;
 }
 .navi_btn_wrapper{
@@ -404,6 +404,43 @@ nav{
 
 /* 아이콘 색상 */
 /* 아이콘 메뉴 - 일반페이지 */
+
+/* 새로나온책 탭 */
+
+.newBook_tab{
+    padding-top: 31px;
+    padding-bottom: 36px;
+    background: url(https://static.ridicdn.net/_next/static/images/recommended_book_background@desktop-cf4f6e0….png) center center no-repeat #17202e;
+    background-size: contain;
+}
+
+.nb_sw_wrapper{
+    width: 1050px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+.nb_ht{
+
+}
+
+.nb_box{
+
+}
+
+.nb_wrapper{
+    width: 100%; 
+    display: flex;
+}
+.nb_slide{
+    width: 60px;
+    height: 150px;
+    background-color: white;
+    display: inline-block;
+    margin: 0 10px;
+}
+/* 새로나온책 탭 */
+
 
 /* 컨텐츠 */
 
