@@ -532,6 +532,83 @@ nav{
     margin-top: 20px;
 }
 
+.rb_wrapper{
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#clock_box{
+    margin: 20px 0 15px;
+    text-align: center;
+    width: 100px;
+    padding: 5.5px 4px ;
+    border-radius: 30px;
+    background-image: linear-gradient(255deg, #0077d9 4%, #72d2e0);
+}
+#clock_box i{
+    filter: invert();
+}
+#nowTime{
+    font-size: .9em;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.rb_hd_text{
+    font-size: 1.25em;
+}
+
+.rb_box{
+    padding-top: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rb_li_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.rb_li_wrapper li{
+    display: flex;
+    margin: auto;
+    padding: 10px;
+
+}
+
+.rb_bc_wrapper a img{
+    width: 50px;
+    height: 70px;
+}
+
+.rb_r_wrapper{
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px #E6E8EB solid;
+}
+.no_bt_line{
+    border-bottom: none;
+}
+.rank_num{
+    font-weight: 800;
+    font-size: 1.4em;
+    margin : auto 13px;
+}
+.rank_bn{
+    text-align: left;
+}
+.rank_bn span{
+    display: block;
+}
+.rb_bn_bt{
+    font-weight: 900;
+}
+.rb_bn_st{
+    color:#636C73;
+}
 /* 현재 시각기준 랭킹 */
 
 /* 컨텐츠 */
