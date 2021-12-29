@@ -1,3 +1,6 @@
+:root{
+    --swiper-navigation-size: 44px;
+}
 *{
     list-style: none;
     margin: 0;
@@ -213,43 +216,119 @@ nav{
 /* 컨텐츠 */
 /* 이벤트 슬라이드 */
 .event_slide_tab{
-    max-width: 1000px;
-    position: relative;
+    width: 100%;
     text-align: center;
+    padding-top: 30px;
 }
-.event_box{
-    text-align: center;
-    margin: 0 auto;  
+
+.ev_sw_wrapper{
+    max-width: 1290px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
 }
 
 .swiper-wrapper{
     display: flex;
-    max-width: 1000px;
+    
 }
 .ev_pn_wrapper{
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 30px;
+    bottom: 15px;
+    left: 64%;
+    width: 45px;
+    height: 20px;
     background-color: black;
     text-align: center;
     opacity: 0.7;
     border-radius: 30px;
     z-index: 1;
 }
+
 .ev_pn{
     position: absolute;
-    top: 4px;
+    top:0.9px;
     color: white;
+    font-size: 12px;
 }
 
+.ev_pn::after{
+    font-weight: 800;
+}
+
+
+.swiper-button-prev::after, .swiper-button-next::after{
+    font-size: 15px;
+    color: #cccccc;
+}
+.swiper-button-prev{
+    padding-right: 11px;
+}
+
+.swiper-button-next{
+    padding-left: 9px;
+}
+.navi_btn_wrapper{
+    position: absolute;
+    z-index: 20;
+    top: 47%;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.navi_btn_wrapper:hover{
+    opacity: 1;
+}
+.next_btn{
+    right: 25%;
+}
+.prev_btn{
+    left: 25%;
+}
 .event_slide{
     width: 430px;
     height: 300px;
-    background-color: yellow;
-    color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+/* 이벤트 카드뉴스 이미지 */
+.event1{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211229101547_1640740547185.jpg")
+}
+.event2{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211226145408_1640498048095.jpg")
+}
+.event3{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211124173939_1637743179827.jpg")
+}
+.event4{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211215020525_1639501525772.jpg")
+}
+.event5{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211201113233_1638325953584.jpg")
+}
+.event6{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211217093606_1639701366901.jpg")
+}
+.event7{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211227101820_1640567900464.jpg")
+}
+.event8{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211224141014_1640322614798.jpg")
+}
+.event9{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211216172659_1639643219461.jpg")
+}
+.event10{
+    background-image: url("https://active.ridibooks.com/ridibooks_top_banner/20211214105436_1639446876116.jpg")
+}
+
+/* 이벤트 카드뉴스 이미지 */
+
 /* 이벤트 슬라이드 */
 
 /* 컨텐츠 */
