@@ -445,7 +445,7 @@ nav{
 
 .sbp_nb::after, .sbn_nb::after{
     font-size: 15px;
-    color: #cccccc;
+    color: #ffffff;
 }
 
 .sbn_nb{
@@ -457,10 +457,14 @@ nav{
 }
 .prev_btn_nb{
     left: 0;
+    background-color: #364050;
+    opacity: 1;
 }
 
 .next_btn_nb{
     right: 0;
+    background-color: #364050;
+    opacity: 1;
 }
 .np_btn_controller{
     width: 1200px;
@@ -523,7 +527,12 @@ nav{
 }
 /* 책제목 저자 */
 /* 새로나온책 탭 */
+/* 현재 시각기준 랭킹 */
+.rankBook_tab{
+    margin-top: 20px;
+}
 
+/* 현재 시각기준 랭킹 */
 
 /* 컨텐츠 */
 

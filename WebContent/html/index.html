@@ -604,11 +604,77 @@
                         <div class="navi_btn_wrapper next_btn_nb">
                             <span class="spbt sbn_nb swiper-button-next"></span>
                         </div>
-
                     </div>
-
                 </div>
+            </div>
+        </section>
+        <section class="rankBook_tab">
+            <div class="rb_wrapper">
+                <div>
+                    <script>
+                        window.onload = () => {
+                            let today = new Date();
 
+                            let hours = today.getHours();
+                            let minutes = today.getMinutes();
+                            let now = hours + ':' + minutes;
+                            document.getElementById('nowTime').innerHTML = now;
+                            setInterval(clock, 1000);
+                        }
+
+                    </script>
+                    <span id="nowTime">00:00</span>
+                    <span>사람들이 지금 많이 읽고 있는 책</span>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                        <li>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
