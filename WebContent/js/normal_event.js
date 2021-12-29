@@ -28,17 +28,11 @@ const swiper_slider = new Swiper('.event_box', {
 const swiper_slider_nb = new Swiper('.nb_box', {
     speed: 500,
     debugger: false,
-    slidesPerView: 5,
-    spaceBetween: 30,
+    slidesPerView: 7,
+    slidesPerGroup: 6,
+    initialSlide: 1,
     loop: true,
     mousewheel: false,
-    centeredSlides: true,
-    effect: 'coverflow',
-    coverflowEffect: {
-        rotate: 0,
-        slideShadows: true,
-        stretch: 0,
-      },
     navigation: {
         nextEl: '.sbn_nb',
         prevEl: '.sbp_nb'
