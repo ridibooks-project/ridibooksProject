@@ -77,3 +77,17 @@ const swiper_slider_wn = new Swiper('.wn_box', {
         prevEl: '.sbp_wn'
     }
 });
+
+const swiper_slider_i = new Swiper('.i_box', {
+    speed: 500,
+    debugger: false,
+    slidesPerView: 6.3,
+    slidesPerGroup: 6,
+    initialSlide: 1,
+    loop: true,
+    mousewheel: false,
+    navigation: {
+        nextEl: '.sbn_i',
+        prevEl: '.sbp_i'
+    }
+});

@@ -824,7 +824,38 @@ padding: 6px 2px;
     font-weight: 100;
 }
 /* 금주의 신간 */
+/* 인스타 추천도서 */
+.instagram_tab{
+    padding-top: 50px;
+    padding-bottom: 56px;
+    text-align: center;
+}
+.i_box{
+    width: 1050px;
+}
+.i_int_text{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    font-weight: 600;
+}
+.sbp_i::after, .sbn_i::after{
+    font-size: 15px;
+    color: #CCCCCC;
+}
+.sbp_i{
+    padding-right: 11px;
 
+}
+
+.sbn_i{
+    padding-left: 9px;
+
+}
+
+
+/* 인스타 추천도서 */
 /* 컨텐츠 */
 
 
