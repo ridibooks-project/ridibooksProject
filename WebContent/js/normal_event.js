@@ -52,3 +52,28 @@ const swiper_slider_tr = new Swiper('.tr_box', {
         prevEl: '.sbp_tr'
     }
 });
+
+
+function countingStar() {
+    let star_progress = document.querySelectorAll('.real_star');
+    let count_star = document.querySelectorAll('.star_rating');
+    for (let i = 0; i < star_progress.length; i++) {
+        star_progress[i].style.width = (count_star[i].value * 15.8) + "px";
+    }
+}
+countingStar();
+                
+
+const swiper_slider_tr = new Swiper('.wn_box', {
+    speed: 500,
+    debugger: false,
+    slidesPerView: 6.3,
+    slidesPerGroup: 6,
+    initialSlide: 1,
+    loop: true,
+    mousewheel: false,
+    navigation: {
+        nextEl: '.sbn_wn',
+        prevEl: '.sbp_wn'
+    }
+});

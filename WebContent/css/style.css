@@ -561,7 +561,7 @@ nav{
 }
 
 .rb_hd_text{
-    font-size: 1.25em;
+    font-size: 1.4em;
 }
 
 .rb_box{
@@ -581,6 +581,9 @@ nav{
     padding: 10px;
 
 }
+.rb_bc_wrapper{
+    margin: auto 0;
+}
 
 .rb_bc_wrapper a img{
     width: 50px;
@@ -592,6 +595,7 @@ nav{
     align-items: center;
     padding: 25px 0;
     border-bottom: 1px #E6E8EB solid;
+    
 }
 .no_bt_line{
     border-bottom: none;
@@ -617,8 +621,8 @@ nav{
 
 /* 오늘의 리디 */
 .todayRidi_tab{
-    padding-top: 31px;
-    padding-bottom: 36px;
+    padding-top: 50px;
+    padding-bottom: 56px;
     text-align: center;
 }
 .tr_sw_wrapper{
@@ -723,8 +727,66 @@ nav{
     font-weight: 600;
 }
 /* 오늘의 리디 */
+/* 베스트셀러 */
+.bs_li_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.bs_li_wrapper li{
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+.star {
+    position: relative;
+    font-size: 1rem;
+    color: #ddd;
+}
+.star_rating {
+width: 100%;
+height: 100%;
+display: none;
+}
+
+.real_star{
+width: 0;
+position: absolute;
+top: 0;
+left: 0;
+color: orange;
+overflow: hidden;
+}
+.star_Review{
+    display: flex;
+}
+.counting_reviewer{
+color: #999999;
+font-size: 11px;
+padding: 6px 2px;
+}
+.bookCover_img{
+    width: 80px;
+    height: 117.325px;
+}
+.bs_bc_wrapper{
+    margin: 10px auto;
+}
+  .bs_r_wrapper{
+    width: 210px;
+    height: 137px;
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px #E6E8EB solid;
+}
+/* 베스트셀러 */
+/* 금주의 신간 */
+
+/* 금주의 신간 */
 
 /* 컨텐츠 */
+
 
 
 
