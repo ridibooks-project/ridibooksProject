@@ -28,7 +28,7 @@ const swiper_slider = new Swiper('.event_box', {
 const swiper_slider_nb = new Swiper('.nb_box', {
     speed: 500,
     debugger: false,
-    slidesPerView: 7,
+    slidesPerView: 6,
     slidesPerGroup: 6,
     initialSlide: 1,
     loop: true,
@@ -36,5 +36,19 @@ const swiper_slider_nb = new Swiper('.nb_box', {
     navigation: {
         nextEl: '.sbn_nb',
         prevEl: '.sbp_nb'
+    }
+});
+
+const swiper_slider_tr = new Swiper('.tr_box', {
+    speed: 500,
+    debugger: false,
+    slidesPerView: 6.3,
+    slidesPerGroup: 6,
+    initialSlide: 1,
+    loop: true,
+    mousewheel: false,
+    navigation: {
+        nextEl: '.sbn_tr',
+        prevEl: '.sbp_tr'
     }
 });

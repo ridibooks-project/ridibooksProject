@@ -422,10 +422,16 @@ nav{
     overflow: hidden;
     margin: 0 auto; 
 }
-
+.newBook_swiper_wrapper{
+    text-align: center;
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto; 
+}
 .nb_ht{
     text-align: left;
-    margin-bottom: 20px;
+    padding-left: 100px;
+    margin-bottom: 25px;
 }
 .nb_ht span{
     color: #ffffff;
@@ -434,7 +440,7 @@ nav{
 }
 
 .nb_box{
-    width: 1400px;
+    width: 1000px;
 }
 .nb_wrapper{
     width: 1050px;
@@ -456,19 +462,17 @@ nav{
     padding-right: 11px;
 }
 .prev_btn_nb{
-    left: 0;
+    left: 4.5%;
     background-color: #364050;
     opacity: 1;
 }
 
 .next_btn_nb{
-    right: 0;
+    right: 4.5%;
     background-color: #364050;
     opacity: 1;
 }
-.np_btn_controller{
-    width: 1200px;
-}
+
 /* 책표지 부분 */
 .nb_all_wrapper{
     width: 100%;
@@ -610,6 +614,115 @@ nav{
     color:#636C73;
 }
 /* 현재 시각기준 랭킹 */
+
+/* 오늘의 리디 */
+.todayRidi_tab{
+    padding-top: 31px;
+    padding-bottom: 36px;
+    text-align: center;
+}
+.tr_sw_wrapper{
+    text-align: center;
+    width: 1200px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.todayRidi_swiper_wrapper{
+    text-align: center;
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.tr_ht{
+    text-align: left;
+    padding-left: 100px;
+    margin-bottom: 25px;
+}
+
+.tr_ht span{
+    font-size: 1.4em;
+}
+
+.tr_box{
+    width: 1050px;
+    
+}
+
+/* 스와이퍼 핸들러 */
+.sbp_tr::after, .sbn_tr::after{
+    font-size: 15px;
+    color: #CCCCCC;
+}
+
+.sbn_tr{
+    padding-left: 9px;
+}
+
+.sbp_tr{
+    padding-right: 11px;
+}
+.prev_btn_tr{
+    left: 4.5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 .5px 3px rgb(0 0 0 / 33%);
+    opacity: 1;
+}
+
+.next_btn_tr{
+    right: 4.5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0.8px 3px rgb(0 0 0 / 33%);
+    opacity: 1;
+}
+
+/* 스와이퍼 핸들러 */
+
+
+.tr_all_wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.tr_bc_wrapper{
+    display: flex;
+}
+.tr_img_wrapper{
+    text-align: center;
+}
+.tr_img_wrapper img{
+    width: 140px;
+    height: 207.66px;
+}
+.borrow_ad{
+    padding-top: 8px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #3EA590;
+    top: 2px;
+    left: 10px;
+    text-align: center;
+}
+.borrow_text{
+    color:#ffffff
+}
+.tr_int_text{
+    background-color: none;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+.tr_int_text span{
+    font-weight: 600;
+}
+/* 오늘의 리디 */
 
 /* 컨텐츠 */
 
