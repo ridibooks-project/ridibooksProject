@@ -64,7 +64,7 @@ function countingStar() {
 countingStar();
                 
 
-const swiper_slider_tr = new Swiper('.wn_box', {
+const swiper_slider_wn = new Swiper('.wn_box', {
     speed: 500,
     debugger: false,
     slidesPerView: 6.3,

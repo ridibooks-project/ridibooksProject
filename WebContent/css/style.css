@@ -782,7 +782,47 @@ padding: 6px 2px;
 }
 /* 베스트셀러 */
 /* 금주의 신간 */
+.weeklyNew_tab{
+    padding-top: 50px;
+    padding-bottom: 56px;
+    text-align: center;
+}
+.wn_box{
+    width: 1050px;
+}
 
+.sbp_wn{
+    padding-right: 11px;
+}
+
+.sbn_wn{
+    padding-left: 9px;
+}
+.sbp_wn::after, .sbn_wn::after{
+    font-size: 15px;
+    color: #CCCCCC;
+}
+.prev_btn_wn{
+    left: 4.5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 .5px 3px rgb(0 0 0 / 33%);
+    opacity: 1;
+}
+
+.next_btn_wn{
+    right: 4.5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0.8px 3px rgb(0 0 0 / 33%);
+    opacity: 1;
+}
+.wn_int_text{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+.weight_lite{
+    font-weight: 100;
+}
 /* 금주의 신간 */
 
 /* 컨텐츠 */
