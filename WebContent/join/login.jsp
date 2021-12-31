@@ -13,10 +13,10 @@
         <form action="/ridibooksProject/member/controller" method="post">
             <div class="ip_box">
                 <label class="ip_label" for="">
-                    <input class="idpw_ip id_ip" name="login_id" type="text" maxlength="20" placeholder="아이디">
+                    <input class="idpw_ip id_ip" id="login_id" name="login_id" type="text" maxlength="20" placeholder="아이디">
                 </label>
                 <label class="ip_label" for="">
-                    <input class="idpw_ip pw_ip" name="login_pw" type="password" maxlength="25" placeholder="비밀번호">
+                    <input class="idpw_ip pw_ip" id="login_pw" name="login_pw" type="password" maxlength="25" placeholder="비밀번호">
                 </label>
                 <div class="ip_btn_box">
                     <div class="ch_wrap">
@@ -35,9 +35,9 @@
             <div class="login_btn_box">
                 <input class="login_btn btn_ap" type="submit" value="로그인">
             </div>
-            <div class="join_btn_box">
+<!--             <div class="join_btn_box">
                 <input class="join_btn btn_ap" type="button" value="회원가입">
-            </div>
+            </div> -->
         </form>
     </div>
     
