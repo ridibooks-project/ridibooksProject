@@ -1,29 +1,6 @@
 body{
     background: #EBF6FF;
 }
-*{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.container{
-    font-size: 14px;
-}
-input{
-    color: inherit;
-    letter-spacing: inherit;
-    font-family: inherit;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    border-radius: 0;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
 /* 헤더 */
 .login_hd_wrap{
     border-bottom: 1px solid #d6deeb;
@@ -51,6 +28,9 @@ section{
     width: 360px;
     margin: 0 auto;
     padding: 60px 0 70px;
+}
+.login_wrap form{
+    padding: 0 10px;
 }
 .ip_box{
     width: 100%;

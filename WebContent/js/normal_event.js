@@ -1,3 +1,4 @@
+// 스와이퍼 api 컨트롤러
 const swiper_slider = new Swiper('.event_box', {
     speed: 500,
     debugger: false,
@@ -83,7 +84,9 @@ const swiper_slider_i = new Swiper('.i_box', {
         prevEl: '.sbp_i'
     }
 });
+// 스와이퍼 api 컨트롤러
 
+// 별점
 function countingStar() {
     let star_progress = document.querySelectorAll('.real_star');
     let count_star = document.querySelectorAll('.star_rating');
@@ -92,4 +95,16 @@ function countingStar() {
     }
 }
 countingStar();
+// 별점
            
+// 회원권한 설정( 로그인 화면 이동 )
+let menu_navi = document.querySelectorAll('.menu_navi');
+for (let i = 0; i < menu_navi.length; i++){
+    if (i > 0) {
+        menu_navi[i].onclick = () => {
+            window.location = "./account/login.html";
+        }
+    }
+}
+menu_navi
+// 회원권한 설정( 로그인 화면 이동 )

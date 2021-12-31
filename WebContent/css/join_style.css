@@ -1,0 +1,84 @@
+body{
+    background: #EBF6FF;
+}
+section{
+    margin-top: 22px;
+    width: 100%;
+}
+
+/* 헤더 */
+.join_hd_wrap{
+    border-bottom: 1px solid #d6deeb;
+}
+.join_logo_wrap{
+    text-align: center;
+}
+.join_logo_wrap a{
+    display: inline-block;
+    padding: 15px 14px 12px;
+}
+.join_hd_logo{
+    width: 84px;
+    height: 13px;
+    fill: #1f8ce6;
+}
+/* 헤더 */
+
+/* 컨텐츠 */
+.join_wrap{
+    text-align: center;
+    width: 360px;
+    margin: 0 auto;
+    padding: 60px 0 70px;
+}
+.join_img_box{
+    margin-top: 11px;
+    padding: 12px;
+}
+.join_img_box img{
+    width: 314px;
+}
+.jns_btn_box{
+    padding-top: 10px;
+}
+.jns_btn_box, .lo_btn_box{
+    padding: 0 10px 10px 10px;
+}
+
+.btn_ap{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;    
+    font-weight: 700;
+    border-radius: 3px;
+    border: 1px solid #D1D5D9;
+    cursor: pointer;
+}
+
+.join_nextStep_btn{
+    background-color: #1F8CE6;
+    color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgb(31 140 230 / 30%);
+
+}
+.gotoLogin_btn{
+    background-color: #ffffff;
+    color: #8089AE;
+    box-shadow: 0 2px 4px 0 rgb(209 213 217 / 30%);
+}
+
+.minor_join{
+    margin-top: 20px;
+}
+
+.minor_join a{
+    color: #84808F;
+    font-size: .85em;
+    font-weight: 800;
+    opacity: 0.7;
+}
+
+.minor_join a:hover{
+    opacity: 1;
+}
+/* 컨텐츠 */
