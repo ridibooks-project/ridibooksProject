@@ -7,9 +7,8 @@ import java.sql.SQLException;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
 
 public class MemberDAO {
 	// 서버 접속
@@ -34,33 +33,26 @@ public class MemberDAO {
 	}
 	
 	// db 정보 조회
-	public MemberDTO selectMember(String id, String pw) {
+	public String selectMember(MemberDTO member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String member_pw = "";
 		
 		try {
 			conn = getConnection();
 			
-			String sql = "SELECT * FROM memberinfo WHERE member_id = ? AND member_pw = ?";
+			String sql = "SELECT member_pw FROM memberinfo WHERE member_id = ?";
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pw);
+			pstmt.setString(1, member.getId());
+			rs = pstmt.executeQuery();
 			
-			ResultSet rs = pstmt.executeQuery();
-			
-			boolean isLogin = rs.next();
-			
-			if(isLogin) {
-				// 로그인 성공한 경우
-				HttpSession session = request.getSession();
-				
-				session.setAttribute("isLogin", true);
-				session.setAttribute("id", id);
-			} else {
-				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-				
+			if(rs.next()) {
+				member_pw = rs.getString("member_pw");
 			}
+			
 			rs.close();
 			
 		} catch(SQLException e) {
@@ -83,7 +75,7 @@ public class MemberDAO {
 			}
 		}
 		
-		return ;
+		return member_pw;
 	}
 	
 	// db 정보 추가
