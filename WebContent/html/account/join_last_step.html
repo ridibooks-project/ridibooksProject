@@ -158,62 +158,79 @@
                             <div class="join_gender_wrapper">
                                 <div class="gen_btn_style">
                                     <div>
-                                        <button type="button" class="gender_ipb ji_style">남</button>
+                                        <button type="button" class="gender_ipm ji_style">남</button>
                                     </div>
                                     <div>
-                                        <button type="button" class="gender_ipg ji_style">여</button>
+                                        <button type="button" class="gender_ipw ji_style">여</button>
                                     </div>
                                 </div>
-
-                                <input type="radio" class="gender_input" name="user_gender" value="남">
-                                <input type="radio" class="gender_input" name="user_gender" value="여">
-
+                                <input type="text" class="gender_input" name="user_gender" value="">
                             </div>
                         </div>
                         <div class="join_checkbox_wrapper">
                             <div class="join_ac_wrapper">
                                 <input type="checkbox" class="all_checkbox checkbox_style">
-                                <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
-                                <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
-                                <span>선택 포함 전체 약관 동의</span>
+                                <span class="check_blue">
+                                    <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
+                                </span>
+                                <span class="check_gray">
+                                    <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
+                                </span>
+                                <span class="checkText">선택 포함 전체 약관 동의</span>
                             </div>
                             <div class="join_ec_wrapper">
-                                <div>
+                                <div class="joinEcFlex ec_style">
                                     <div>
                                         <input type="checkbox" class="eo_checkbox eo1 checkbox_style" required>
-                                        <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
-                                        <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
-                                        <span>이용약관 동의 (필수)</span>
+                                        <span class="check_blue">
+                                            <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
+                                        </span>
+                                        <span class="check_gray">
+                                            <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
+                                        </span>
+                                        <span class="checkText">이용약관 동의 (필수)</span>
                                     </div>
-                                    <div><a href="">약관보기 ></a></div>
+                                    <div><a href="" class="checkText sm_text">약관보기 ></a></div>
                                 </div>
-                                <div>
+                                <div class="ec_style">
                                     <div>
                                         <input type="checkbox" class="eo_checkbox eo2 checkbox_style">
-                                        <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
-                                        <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
-                                        <span>이벤트, 혜택 알림 수신 동의(선택)</span>
+                                        <span class="check_blue">
+                                            <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
+                                        </span>
+                                        <span class="check_gray">
+                                            <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
+                                        </span>
+                                        <span class="checkText">이벤트, 혜택 알림 수신 동의(선택)</span>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="joinEcFlex ec_style">
                                     <div>
                                         <input type="checkbox" class="eo_checkbox eo3 checkbox_style">
-                                        <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
-                                        <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
-                                        <span>성별, 생년 정보 제공 동의(선택)</span>
+                                        <span class="check_blue">
+                                            <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
+                                        </span>
+                                        <span class="check_gray">
+                                            <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
+                                        </span>
+                                        <span class="checkText">성별, 생년 정보 제공 동의(선택)</span>
 
                                     </div>
-                                    <div><a href="">내용확인 ></a></div>
+                                    <div><a href="" class="checkText sm_text">내용확인 ></a></div>
                                 </div>
                             </div>
-                            <div class="join_nc_wrapper">
+                            <div class="join_nc_wrapper joinEcFlex">
                                 <div>
                                     <input type="checkbox" class="n_checkbox checkbox_style" required>
-                                    <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
-                                    <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
-                                    <span>개인 정보 수집 및 이용 동의(필수)</span>
+                                    <span class="check_blue">
+                                        <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
+                                    </span>
+                                    <span class="check_gray">
+                                        <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
+                                    </span>
+                                    <span class="checkText">개인 정보 수집 및 이용 동의(필수)</span>
                                 </div>
-                                <div><a href="">내용확인 ></a></div>
+                                <div><a href="" class="checkText sm_text">내용확인 ></a></div>
                             </div>
                         </div>
                     </div>
@@ -227,6 +244,5 @@
         </section>
     </div>
     <script src="https://kit.fontawesome.com/39caf77dda.js" crossorigin="anonymous"></script>
+    <script src="../../js/join_event.js"></script>
 </body>
-
-</html>
