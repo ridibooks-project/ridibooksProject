@@ -212,6 +212,7 @@ section{
     
 }
 .gender_ipm{
+    font-weight: 400;
     border-top-right-radius: 0; 
     border-bottom-right-radius: 0;
     border-right: 0;
@@ -221,6 +222,7 @@ section{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     cursor: pointer;
+    font-weight: 400;
 }
 
 .gender_input{
@@ -280,11 +282,12 @@ section{
 }
 .sm_text{
     font-size: .8em;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 input[type="checkbox"]{
     display: none;
 }
+
 .check_blue{
     display: none;
     cursor: pointer;
@@ -294,9 +297,7 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-.checkText:hover, .sm_text:hover{
-    opacity: 1;
-}
+
 /* btn */
 .jc_btn_box{
     margin-top: 10px;
