@@ -36,7 +36,7 @@
                                 <label>
                                     <span class="input_guide">5~20자 영문,숫자 입력</span>
                                     <input type="text" name="user_id" class="ji_style join_id_input" maxlength="20"
-                                        placeholder="아이디">
+                                        placeholder="아이디" required>
                                 </label>
                                 <i class="success_mes fas fa-check"></i>
                             </div>
@@ -85,13 +85,13 @@
                                     <div>
                                         <span class="input_guide">8자 이상, 영문/숫자/특수문자중 2가지 이상 입력</span>
                                         <input type="password" name="user_id" class="ji_style join_pw_input"
-                                            placeholder="비밀번호">
+                                            placeholder="비밀번호" required>
                                         <i class="success_mes fas fa-check"></i>
                                     </div>
                                     <div>
                                         <span class="input_guide">비밀번호 재입력</span>
                                         <input type="password" name="user_id" class="ji_style join_rpw_input"
-                                            placeholder="비밀번호 확인">
+                                            placeholder="비밀번호 확인" required>
                                         <i class="success_mes fas fa-check"></i>
                                     </div>
 
@@ -111,7 +111,7 @@
                                 <label for="">
                                     <span class="input_guide">이메일 주소 입력</span>
                                     <input required type="email" name="user_email" class="ji_style join_em_input"
-                                        placeholder="이메일 주소">
+                                        placeholder="이메일 주소" required>
                                     <i class="success_mes fas fa-check"></i>
                                 </label>
                             </div>
@@ -126,7 +126,7 @@
                                 <label for="">
                                     <span class="input_guide">이름 입력</span>
                                     <input required type="text" name="user_name" class="ji_style join_name_input"
-                                        placeholder="이름">
+                                        placeholder="이름" required>
                                     <i class="success_mes fas fa-check"></i>
                                 </label>
                             </div>
@@ -194,7 +194,8 @@
                                 </div>
                                 <div class="ec_style">
                                     <div>
-                                        <input type="checkbox" class="eo_checkbox eo2 checkbox_style">
+                                        <input type="checkbox" name="message_agreement"
+                                            class="eo_checkbox eo2 checkbox_style">
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
                                         </span>
@@ -206,7 +207,8 @@
                                 </div>
                                 <div class="joinEcFlex ec_style">
                                     <div>
-                                        <input type="checkbox" class="eo_checkbox eo3 checkbox_style">
+                                        <input type="checkbox" name="birth_agreement"
+                                            class="eo_checkbox eo3 checkbox_style">
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
                                         </span>

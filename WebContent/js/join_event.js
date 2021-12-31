@@ -1,3 +1,10 @@
+
+
+
+
+
+
+// 남녀 버튼 클릭시 input값에 value대입
 let gender_ip_man = document.querySelector('.gender_ipm');
 let gender_ip_woman = document.querySelector('.gender_ipw');
 
@@ -19,3 +26,5 @@ gender_ip_woman.onclick = () => {
     gender_ip_woman.style.color = "white";
     gender_input.setAttribute('value', '여');
 }
+// 남녀 버튼 클릭시 input값에 value대입
+
