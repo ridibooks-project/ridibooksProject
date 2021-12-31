@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>회원가입 - 리디북스</title>
+    <title>회원가입</title>
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
     <link href="../../css/join_style.css" rel="stylesheet" type="text/css">
 </head>
@@ -29,28 +29,200 @@
         </div>
         <section>
             <div class="join_wrap">
-                <div class="join_img_box">
-                    <img src="	https://ridibooks.com/_next/image?url=%2Fimages%2Fsignup_type_selection.png&w=384&q=75"
-                        alt="">
-                </div>
-                <div>
-                    <div class="jns_btn_box">
-                        <a href="#">
-                            <input class="join_nextStep_btn btn_ap" type="button" value="일반 회원가입">
-                        </a>
+                <form action="" method="post" class="join_form">
+                    <div class="join_ip_wrapper">
+                        <div class="join_id_wrapper">
+                            <div>
+                                <label>
+                                    <span class="input_guide">5~20자 영문,숫자 입력</span>
+                                    <input type="text" name="user_id" class="ji_style join_id_input" maxlength="20"
+                                        placeholder="아이디">
+                                </label>
+                                <i class="success_mes fas fa-check"></i>
+                            </div>
+                            <div class="er_ms_box">
+                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_require">아이디를 입력해주세요.</span>
+                                <span class="error_alreadyUse">이미 사용 중인 아이디입니다.</span>
+                                <span class="error_wrong">5~20자의 영문 소문자와 숫자로만 입력해주세요</span>
+                            </div>
+
+                            <!-- keyup동시에 중복확인 ajax (추후 구현)
+                            <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+                            <script type="text/javascript">
+                            $(document).ready(function(){
+                                $('#id').keyup(function(){
+                                    if ( $('.join_id_input').val().length > 4) {
+                                        var id = $(this).val();
+                                        
+                                        $.ajax({
+                                            type : 'POST',
+                                            url : '',
+                                            data:
+                                            {
+                                                id: id
+                                            },
+                                            success : function(result) {
+                                                //console.log(result);
+                                                if (result == "ok") {
+                                                   $('.success_mes').style.display = 'block';
+                                                } else {
+                                                    $('.error_alreadyUse').style.display = 'block';
+                                                    $('.join_id_input').style.border = 'border: 1px solid red;';
+                                                }
+                                            }
+                                        }); 
+                                    }
+                                }); 
+                            });
+                            </script>
+                            keyup동시에 중복확인 ajax (추후 구현) -->
+
+                        </div>
+                        <div class="join_pw_wrapper">
+                            <div>
+                                <label for="">
+                                    <div>
+                                        <span class="input_guide">8자 이상, 영문/숫자/특수문자중 2가지 이상 입력</span>
+                                        <input type="password" name="user_id" class="ji_style join_pw_input"
+                                            placeholder="비밀번호">
+                                        <i class="success_mes fas fa-check"></i>
+                                    </div>
+                                    <div>
+                                        <span class="input_guide">비밀번호 재입력</span>
+                                        <input type="password" name="user_id" class="ji_style join_rpw_input"
+                                            placeholder="비밀번호 확인">
+                                        <i class="success_mes fas fa-check"></i>
+                                    </div>
+
+                                </label>
+
+                            </div>
+                            <div class="er_ms_box">
+                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_require">비밀번호를 입력해주세요.</span>
+                                <span class="error_wrong">8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력해주세요.</span>
+                                <span class="error_unequal">비밀번호가 일치하지 않습니다.</span>
+                                <span class="error_special">연속된 3자 이상의 같은 문자는 제한합니다.</span>
+                            </div>
+                        </div>
+                        <div class="join_em_wrapper">
+                            <div>
+                                <label for="">
+                                    <span class="input_guide">이메일 주소 입력</span>
+                                    <input required type="email" name="user_email" class="ji_style join_em_input"
+                                        placeholder="이메일 주소">
+                                    <i class="success_mes fas fa-check"></i>
+                                </label>
+                            </div>
+                            <div class="er_ms_box">
+                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_require">이메일을 입력해주세요.</span>
+                                <span class="error_wrong">올바른 이메일 형식이 아닙니다.</span>
+                            </div>
+                        </div>
+                        <div class="join_name_wrapper">
+                            <div>
+                                <label for="">
+                                    <span class="input_guide">이름 입력</span>
+                                    <input required type="text" name="user_name" class="ji_style join_name_input"
+                                        placeholder="이름">
+                                    <i class="success_mes fas fa-check"></i>
+                                </label>
+                            </div>
+                            <div class="er_ms_box">
+                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_require">이름을 입력해주세요.</span>
+                                <span class="error_wrong">한글 또는 영문으로 입력해주세요.</span>
+                                <span class="error_special">2글자 이상의 이름을 정확히 입력해주세요.</span>
+                            </div>
+                        </div>
+                        <div class="sel_in">
+                            <span>선택 입력</span>
+                        </div>
+                        <div class="join_bg_wrapper">
+                            <div class="join_birth_wrapper">
+                                <div>
+                                    <label for="">
+                                        <span class="input_guide">예: 1995</span>
+                                        <input required type="text" maxlength="4" name="user_birth"
+                                            class="ji_style join_birth_input" placeholder="출생년도">
+                                        <i class="success_mes half_sm fas fa-check"></i>
+                                    </label>
+                                </div>
+                                <div class="er_ms_box">
+                                    <i class="error_m_i fas fa-exclamation-circle"></i>
+                                    <span class="error_wrong">정확히 입력해주세요.</span>
+                                </div>
+                            </div>
+                            <div class="join_gender_wrapper">
+                                <div class="gen_btn_style">
+                                    <div>
+                                        <button type="button" class="gender_ipb ji_style">남</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="gender_ipg ji_style">여</button>
+                                    </div>
+                                </div>
+
+                                <input type="radio" class="gender_input" name="user_gender" value="남">
+                                <input type="radio" class="gender_input" name="user_gender" value="여">
+
+                            </div>
+                        </div>
+                        <div class="join_checkbox_wrapper">
+                            <div class="join_ac_wrapper">
+                                <input type="checkbox" class="all_checkbox checkbox_style">
+                                <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
+                                <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
+                                <span>선택 포함 전체 약관 동의</span>
+                            </div>
+                            <div class="join_ec_wrapper">
+                                <div>
+                                    <div>
+                                        <input type="checkbox" class="eo_checkbox eo1 checkbox_style" required>
+                                        <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
+                                        <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
+                                        <span>이용약관 동의 (필수)</span>
+                                    </div>
+                                    <div><a href="">약관보기 ></a></div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input type="checkbox" class="eo_checkbox eo2 checkbox_style">
+                                        <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
+                                        <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
+                                        <span>이벤트, 혜택 알림 수신 동의(선택)</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input type="checkbox" class="eo_checkbox eo3 checkbox_style">
+                                        <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
+                                        <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
+                                        <span>성별, 생년 정보 제공 동의(선택)</span>
+
+                                    </div>
+                                    <div><a href="">내용확인 ></a></div>
+                                </div>
+                            </div>
+                            <div class="join_nc_wrapper">
+                                <div>
+                                    <input type="checkbox" class="n_checkbox checkbox_style" required>
+                                    <i class="far fa-check-circle check_blue" style="color: #1F8CE6;"></i>
+                                    <i class="far fa-check-circle check_gray" style="color: #D6DEEB;"></i>
+                                    <span>개인 정보 수집 및 이용 동의(필수)</span>
+                                </div>
+                                <div><a href="">내용확인 ></a></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="lo_btn_box">
-                        <a href="./login.html">
-                            <input class="gotoLogin_btn btn_ap" type="button" value="로그인">
-                        </a>
+                    <div class="join_btn_wrapper">
+                        <div class="jc_btn_box">
+                            <input class="join_complete_btn btn_ap" type="submit" value="회원 가입 완료">
+                        </div>
                     </div>
-                </div>
-                <div class="minor_join">
-                    <a href="">
-                        <span>14세 미만 회원가입</span>
-                        <i class="fas fa-chevron-circle-right"></i>
-                    </a>
-                </div>
+                </form>
             </div>
         </section>
     </div>
