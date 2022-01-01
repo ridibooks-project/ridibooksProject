@@ -152,6 +152,7 @@ section{
 .error_unequal{display: none;}
 .error_special{display: none;}
 .error_alreadyUse{display: none;}
+.error_sameIdPw{display: none;}
 
 /* input all style */
 

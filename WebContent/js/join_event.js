@@ -1,11 +1,13 @@
 // 호이스팅
+
 // all input style
 let ji_style = document.querySelectorAll('.ji_style');
 let error_m_i = document.querySelectorAll('.error_m_i');
 let error_require = document.querySelectorAll('.error_require');
 let error_wrong = document.querySelectorAll('.error_wrong');
-let error_unequal = document.querySelectorAll('.error_unequal');
-let error_special = document.querySelectorAll('.error_special');
+let error_unequal = document.querySelector('.error_unequal');
+let error_special = document.querySelector('.error_special');
+let error_sameIdPw = document.querySelector('.error_sameIdPw');
 let error_alreadyUse = document.querySelectorAll('.error_alreadyUse');
 let input_guide = document.querySelectorAll('.input_guide');
 // all input style
@@ -53,6 +55,8 @@ function check_off(inputVariable) {
     checkbox_style[inputVariable].checked = false;
 }
 // 체크박스
+
+
 // 호이스팅
 //모든 input
 for (let i = 0; i < 6; i++){
@@ -76,6 +80,11 @@ id_input.onclick = () => {
 }
 
 id_input.onblur = () => {
+ // 유효성 검사
+    let id = id_input.value;
+    let spe = id.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+    let big_eng = id.search(/[A-Z]/ig);
+// 유효성 검사
     if (id_input.value.length == 0) {
         error_m_i[0].style.display = "inline-block";
         error_wrong[0].style.display = "none";
@@ -83,7 +92,7 @@ id_input.onblur = () => {
         id_input.style.border = "1px solid #E64938";
         id_input.classList.add('redLinePlaceholder');
         input_guide[0].style.display = "none";
-    } else if (id_input.value.length < 5) {
+    } else if ((id_input.value.length < 5) || (spe > 0 || big_eng>0)) {
         error_m_i[0].style.display = "inline-block";
         error_wrong[0].style.display = "inline-block";
         error_require[0].style.display = "none";
@@ -115,10 +124,20 @@ pw_input.onclick = () => {
 }
 
 pw_input.onblur = () => {
+// 유효성 검사
+let id = id_input.value;
+let pw = pw_input.value;	
+let num = pw.search(/[0-9]/g);
+let eng = pw.search(/[a-z]/ig);
+    let spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+    let big_eng = id.search(/[A-Z]/ig);
+// 유효성 검사
     if (pw_input.value.length == 0) {
         error_m_i[1].style.display = "inline-block";
         error_wrong[1].style.display = "none";
         error_require[1].style.display = "inline-block";
+        error_special.style.display = "none";
+        error_sameIdPw.style.display = "none"
         pw_input.style.border = "1px solid #E64938";
         pw_input.classList.add('redLinePlaceholder');
         input_guide[1].style.display = "none";
@@ -126,23 +145,90 @@ pw_input.onblur = () => {
         error_m_i[1].style.display = "inline-block";
         error_wrong[1].style.display = "inline-block";
         error_require[1].style.display = "none";
+        error_special.style.display = "none";
+        error_sameIdPw.style.display = "none"
         pw_input.style.border = "1px solid #E64938";
         input_guide[1].style.display = "inline-block";
         input_guide[1].innerHTML = "비밀번호"
         input_guide[1].style.color = "#E64938";
-    } else {
+    }else if((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
+        error_m_i[1].style.display = "inline-block";
+        error_wrong[1].style.display = "inline-block";
+        error_require[1].style.display = "none";
+        error_special.style.display = "none";
+        error_sameIdPw.style.display = "none"
+        pw_input.style.border = "1px solid #E64938";
+        input_guide[1].style.display = "inline-block";
+        input_guide[1].innerHTML = "비밀번호"
+        input_guide[1].style.color = "#E64938";
+	}else if(/(\w)\1\1\1/.test(pw)){
+	    error_m_i[1].style.display = "inline-block";
+        error_wrong[1].style.display = "none";
+        error_require[1].style.display = "none";
+        error_special.style.display = "inline-block";
+        error_sameIdPw.style.display = "none"
+        pw_input.style.border = "1px solid #E64938";
+        input_guide[1].style.display = "inline-block";
+        input_guide[1].innerHTML = "비밀번호"
+        input_guide[1].style.color = "#E64938";
+    } else if (pw.search(id) > -1) {
+        error_m_i[1].style.display = "inline-block";
+        error_wrong[1].style.display = "none";
+        error_require[1].style.display = "none";
+        error_special.style.display = "none";
+        error_sameIdPw.style.display = "inline-block"
+        pw_input.style.border = "1px solid #E64938";
+        input_guide[1].style.display = "inline-block";
+        input_guide[1].innerHTML = "비밀번호"
+        input_guide[1].style.color = "#E64938";
+    }else {
         error_m_i[1].style.display = "none";
         error_require[1].style.display = "none";
         error_wrong[1].style.display = "none";
+        error_special.style.display = "none";
+        error_sameIdPw.style.display = "none"
         pw_input.style.border = "1px solid #D6DEEB";
+        pw_input.style.borderBottom = "none";
         input_guide[1].style.display = "inline-block";
         input_guide[1].innerHTML = "비밀번호";
         input_guide[1].style.color = "#738096";
         id_input.classList.remove('redLinePlaceholder');
     }
 }
-rpw_input
 
+rpw_input.onblur = () => {
+    if (rpw_input.value.length == 0) {
+        error_m_i[1].style.display = "inline-block";
+        error_require[1].style.display = "inline-block";
+        error_unequal.style.display = "none";
+        pw_input.style.border = "1px solid #D6DEEB";
+        pw_input.style.borderBottom = "none";
+        input_guide[1].style.display = "inline-block";
+        input_guide[1].innerHTML = "비밀번호 재입력";
+        input_guide[1].style.color = "#738096";
+        id_input.classList.remove('redLinePlaceholder');
+    }else if (pw_input.value != this.value) {
+        error_m_i[1].style.display = "inline-block";
+        error_require[1].style.display = "none";
+        error_unequal.style.display = "inline-block";
+        pw_input.style.border = "1px solid #D6DEEB";
+        pw_input.style.borderBottom = "none";
+        input_guide[1].style.display = "inline-block";
+        input_guide[1].innerHTML = "비밀번호 재입력";
+        input_guide[1].style.color = "#738096";
+        id_input.classList.remove('redLinePlaceholder');
+    } else {
+        error_m_i[1].style.display = "none";
+        error_require[1].style.display = "none";
+        error_unequal.style.display = "none";
+        pw_input.style.border = "1px solid #D6DEEB";
+        pw_input.style.borderBottom = "none";
+        input_guide[1].style.display = "inline-block";
+        input_guide[1].innerHTML = "비밀번호 확인";
+        input_guide[1].style.color = "#738096";
+        id_input.classList.remove('redLinePlaceholder');
+    }
+}
 
 // 비밀번호 input
 
