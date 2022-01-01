@@ -38,10 +38,11 @@
                                     <input type="text" name="user_id" class="ji_style join_id_input" maxlength="20"
                                         placeholder="아이디" required>
                                 </label>
-                                <i class="success_mes fas fa-check"></i>
+                                <span class="success_mes"><i class="fas fa-check"></i></span>
+
                             </div>
                             <div class="er_ms_box">
-                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                 <span class="error_require">아이디를 입력해주세요.</span>
                                 <span class="error_alreadyUse">이미 사용 중인 아이디입니다.</span>
                                 <span class="error_wrong">5~20자의 영문 소문자와 숫자로만 입력해주세요</span>
@@ -86,20 +87,20 @@
                                         <span class="input_guide">8자 이상, 영문/숫자/특수문자중 2가지 이상 입력</span>
                                         <input type="password" name="user_id" class="ji_style join_pw_input"
                                             placeholder="비밀번호" required>
-                                        <i class="success_mes fas fa-check"></i>
+                                        <span class="success_mes"><i class="fas fa-check"></i></span>
                                     </div>
                                     <div>
                                         <span class="input_guide">비밀번호 재입력</span>
                                         <input type="password" name="user_id" class="ji_style join_rpw_input"
                                             placeholder="비밀번호 확인" required>
-                                        <i class="success_mes fas fa-check"></i>
+                                        <span class="success_mes"><i class="fas fa-check"></i></span>
                                     </div>
 
                                 </label>
 
                             </div>
                             <div class="er_ms_box">
-                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                 <span class="error_require">비밀번호를 입력해주세요.</span>
                                 <span class="error_wrong">8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력해주세요.</span>
                                 <span class="error_unequal">비밀번호가 일치하지 않습니다.</span>
@@ -112,11 +113,11 @@
                                     <span class="input_guide">이메일 주소 입력</span>
                                     <input required type="email" name="user_email" class="ji_style join_em_input"
                                         placeholder="이메일 주소" required>
-                                    <i class="success_mes fas fa-check"></i>
+                                    <span class="success_mes"><i class="fas fa-check"></i></span>
                                 </label>
                             </div>
                             <div class="er_ms_box">
-                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                 <span class="error_require">이메일을 입력해주세요.</span>
                                 <span class="error_wrong">올바른 이메일 형식이 아닙니다.</span>
                             </div>
@@ -127,11 +128,11 @@
                                     <span class="input_guide">이름 입력</span>
                                     <input required type="text" name="user_name" class="ji_style join_name_input"
                                         placeholder="이름" required>
-                                    <i class="success_mes fas fa-check"></i>
+                                    <span class="success_mes"><i class="fas fa-check"></i></span>
                                 </label>
                             </div>
                             <div class="er_ms_box">
-                                <i class="error_m_i fas fa-exclamation-circle"></i>
+                                <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                 <span class="error_require">이름을 입력해주세요.</span>
                                 <span class="error_wrong">한글 또는 영문으로 입력해주세요.</span>
                                 <span class="error_special">2글자 이상의 이름을 정확히 입력해주세요.</span>
@@ -147,11 +148,11 @@
                                         <span class="input_guide">예: 1995</span>
                                         <input required type="text" maxlength="4" name="user_birth"
                                             class="ji_style join_birth_input" placeholder="출생년도">
-                                        <i class="success_mes half_sm fas fa-check"></i>
+                                        <span class="success_mes half_sm"><i class="fas fa-check"></i></span>
                                     </label>
                                 </div>
                                 <div class="er_ms_box">
-                                    <i class="error_m_i fas fa-exclamation-circle"></i>
+                                    <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                     <span class="error_wrong">정확히 입력해주세요.</span>
                                 </div>
                             </div>
@@ -169,32 +170,33 @@
                         </div>
                         <div class="join_checkbox_wrapper">
                             <div class="join_ac_wrapper">
-                                <input type="checkbox" class="all_checkbox checkbox_style">
+                                <input type="checkbox" value="off" class="all_checkbox checkbox_style">
                                 <span class="check_blue">
                                     <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
                                 </span>
                                 <span class="check_gray">
                                     <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
                                 </span>
-                                <span class="checkText">선택 포함 전체 약관 동의</span>
+                                <span class="checkText opacity_mo_event">선택 포함 전체 약관 동의</span>
                             </div>
                             <div class="join_ec_wrapper">
                                 <div class="joinEcFlex ec_style">
                                     <div>
-                                        <input type="checkbox" class="eo_checkbox eo1 checkbox_style" required>
+                                        <input type="checkbox" value="off" class="eo_checkbox eo1 checkbox_style"
+                                            required>
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
                                         </span>
                                         <span class="check_gray">
                                             <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
                                         </span>
-                                        <span class="checkText">이용약관 동의 (필수)</span>
+                                        <span class="checkText opacity_mo_event">이용약관 동의 (필수)</span>
                                     </div>
                                     <div><a href="" class="checkText sm_text">약관보기 ></a></div>
                                 </div>
                                 <div class="ec_style">
                                     <div>
-                                        <input type="checkbox" name="message_agreement"
+                                        <input type="checkbox" value="off" name="message_agreement"
                                             class="eo_checkbox eo2 checkbox_style">
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
@@ -202,12 +204,12 @@
                                         <span class="check_gray">
                                             <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
                                         </span>
-                                        <span class="checkText">이벤트, 혜택 알림 수신 동의(선택)</span>
+                                        <span class="checkText opacity_mo_event">이벤트, 혜택 알림 수신 동의(선택)</span>
                                     </div>
                                 </div>
                                 <div class="joinEcFlex ec_style">
                                     <div>
-                                        <input type="checkbox" name="birth_agreement"
+                                        <input type="checkbox" value="off" name="birth_agreement"
                                             class="eo_checkbox eo3 checkbox_style">
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
@@ -215,7 +217,7 @@
                                         <span class="check_gray">
                                             <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
                                         </span>
-                                        <span class="checkText">성별, 생년 정보 제공 동의(선택)</span>
+                                        <span class="checkText opacity_mo_event">성별, 생년 정보 제공 동의(선택)</span>
 
                                     </div>
                                     <div><a href="" class="checkText sm_text">내용확인 ></a></div>
@@ -223,14 +225,14 @@
                             </div>
                             <div class="join_nc_wrapper joinEcFlex">
                                 <div>
-                                    <input type="checkbox" class="n_checkbox checkbox_style" required>
+                                    <input type="checkbox" value="off" class="n_checkbox checkbox_style" required>
                                     <span class="check_blue">
                                         <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
                                     </span>
                                     <span class="check_gray">
                                         <i class="far fa-check-circle" style="color: #D6DEEB;"></i>
                                     </span>
-                                    <span class="checkText">개인 정보 수집 및 이용 동의(필수)</span>
+                                    <span class="checkText opacity_mo_event">개인 정보 수집 및 이용 동의(필수)</span>
                                 </div>
                                 <div><a href="" class="checkText sm_text">내용확인 ></a></div>
                             </div>
