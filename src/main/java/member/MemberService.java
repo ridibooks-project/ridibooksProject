@@ -1,5 +1,7 @@
 package member;
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -48,15 +50,38 @@ public class MemberService {
 	
 	// 회원가입
 	public int joinMember(HttpServletRequest request, HttpServletResponse response) {
-//		String id = request.getParameter("sign_id");
-//		String pw = request.getParameter("sign_pw");
-//		String pwChk = request.getParameter("sign_pwChk");
-//		String email = request.getParameter("sign_email");
-//		String name = request.getParameter("sign_name");
-//		String year = request.getParameter("sign_year");
-//		String gender = request.getParameter("sing_gender");
-//		String marketing = request.getParameter("marketing_agree");
-//		String select_agree = request.getParameter("select_agree");
+		String id = request.getParameter("sign_id");
+		String pw = request.getParameter("sign_pw");
+//		String pwChk = request.getParameter("sign_pwChk"); 검증코드를 어디서 쓸지에 따라 삭제할 수도 있음
+		String email = request.getParameter("sign_email");
+		String name = request.getParameter("sign_name");
+		String year = request.getParameter("sign_year");
+		String gender = request.getParameter("sing_gender");
+		String marketing_agree = request.getParameter("marketing_agree");
+		String select_agree = request.getParameter("select_agree");
+		
+		if(marketing_agree == null) {
+			marketing_agree = "N";
+		} else {
+			marketing_agree = "Y";
+		}
+		if(select_agree == null) {
+			select_agree = "N";
+		} else {
+			select_agree = "Y";
+		}
+		LocalDateTime ldt = LocalDateTime.now();
+		
+		MemberDTO member = new MemberDTO();
+		member.setId(id);
+		member.setPw(pw);
+		member.setEmail(email);
+		member.setName(name);
+		member.setYear(year);
+		member.setGender(gender);
+		member.setMarketing_agree(marketing_agree);
+		member.setSelect_agree(select_agree);
+		member.setSignup_date(ldt);
 		
 		return 0;
 	}

@@ -14,14 +14,11 @@ public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// 조회 - 로그인 등
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberService service = new MemberService();
 		int statusCode = service.loginMember(request, response);
 		
-		 response.setStatus(statusCode);
-		
-//		RequestDispatcher rd = request.getRequestDispatcher("/join/memberOutput.jsp");
-//		rd.forward(request, response);
+//		 response.setStatus(statusCode);
 		
 		response.sendRedirect("/ridibooksProject/join/memberOutput.jsp");
 		
@@ -29,10 +26,12 @@ public class MemberController extends HttpServlet {
 		
 	}
 
-//	// 생성 - 회원가입
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//	}
+	// 생성 - 회원가입
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	doGet(request, response);
+		
+	}
 	
 	// 업데이트 - 변경 등
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

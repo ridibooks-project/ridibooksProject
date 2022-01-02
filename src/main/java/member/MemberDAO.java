@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -32,7 +33,12 @@ public class MemberDAO {
 		return null;
 	}
 	
-	// db 정보 조회
+	// db 정보 조회 - 로그인
+	
+	// 코드 수정 필요
+	// 1. MemberService 로 가서 비밀번호를 체크하지 말고 여기서 체크하고
+	//    체크 후 맞는지 아닌지 결과 값을 return
+	// 2. 만약 비밀번호가 맞으면 db에서 해당 id의 login_date 값을 수정하는 코드 추가
 	public String selectMember(MemberDTO member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -78,8 +84,30 @@ public class MemberDAO {
 		return member_pw;
 	}
 	
-	// db 정보 추가
+	// db 정보 추가 - 회원가입
 	public boolean insertMember(MemberDTO member) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "INSERT INTO memberinfo(member_id, member_pw, member_email, member_name, year, gender, marketing_agree, select_agree, signup_date) "
+					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getId());
+			pstmt.setString(2, member.getPw());
+			pstmt.setString(3, member.getEmail());
+			pstmt.setString(4, member.getName());
+			pstmt.setString(5, member.getYear());
+			pstmt.setString(6, member.getGender());
+			pstmt.setString(7, member.getMarketing_agree());
+			pstmt.setString(8, member.getSelect_agree());
+			pstmt.setTimestamp(9, Timestamp.valueOf(member.getSignup_date()));
+		}
+		
 		return false;
 	}
 	
