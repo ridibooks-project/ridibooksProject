@@ -1,5 +1,4 @@
 // 호이스팅
-
 // all input style
 let ji_style = document.querySelectorAll('.ji_style');
 let error_m_i = document.querySelectorAll('.error_m_i');
@@ -106,7 +105,6 @@ for (let i = 0; i < 6; i++){
             }
         }
     }
-    
 }
 //모든 input
 
