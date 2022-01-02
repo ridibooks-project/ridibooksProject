@@ -153,6 +153,8 @@ section{
 .error_special{display: none;}
 .error_alreadyUse{display: none;}
 .error_sameIdPw{display: none;}
+.error_useUpperance{display: none;}
+.error_lenght{display: none;}
 
 /* input all style */
 
@@ -193,6 +195,11 @@ section{
 .join_name_wrapper div{position: relative;}
 
 /* input birth & input gender */
+input[type = number]::-webkit-outer-spin-button,
+input[type = number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .sel_in{
     text-align: left;
     font-size: .85em;

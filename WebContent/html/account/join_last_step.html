@@ -35,7 +35,8 @@
                             <div>
                                 <label>
                                     <span class="input_guide">5~20자 영문,숫자 입력</span>
-                                    <input type="text" name="user_id" class="ji_style join_id_input" maxlength="20"
+                                    <input type="text" name="user_id" autocapitalize="off" autocomplete="off"
+                                        autocorrect="off" class="ji_style join_id_input" maxlength="20"
                                         placeholder="아이디" required>
                                 </label>
                                 <span class="success_mes"><i class="fas fa-check"></i></span>
@@ -85,14 +86,16 @@
                                 <label for="">
                                     <div>
                                         <span class="input_guide">8자 이상, 영문/숫자/특수문자중 2가지 이상 입력</span>
-                                        <input type="password" name="user_id" class="ji_style join_pw_input"
-                                            placeholder="비밀번호" required>
+                                        <input type="password" name="user_id" autocapitalize="off" autocomplete="off"
+                                            autocorrect="off" class="ji_style join_pw_input" placeholder="비밀번호"
+                                            required>
                                         <span class="success_mes"><i class="fas fa-check"></i></span>
                                     </div>
                                     <div>
                                         <span class="input_guide">비밀번호 재입력</span>
-                                        <input type="password" name="user_id" class="ji_style join_rpw_input"
-                                            placeholder="비밀번호 확인" required>
+                                        <input autocapitalize="off" autocomplete="off" autocorrect="off" type="password"
+                                            name="user_id" class="ji_style join_rpw_input" placeholder="비밀번호 확인"
+                                            required>
                                         <span class="success_mes"><i class="fas fa-check"></i></span>
                                     </div>
 
@@ -112,7 +115,8 @@
                             <div>
                                 <label for="">
                                     <span class="input_guide">이메일 주소 입력</span>
-                                    <input required type="email" name="user_email" class="ji_style join_em_input"
+                                    <input required autocapitalize="off" autocomplete="off" autocorrect="off"
+                                        type="email" name="user_email" class="ji_style join_em_input"
                                         placeholder="이메일 주소" required>
                                     <span class="success_mes"><i class="fas fa-check"></i></span>
                                 </label>
@@ -121,14 +125,16 @@
                                 <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                 <span class="error_require">이메일을 입력해주세요.</span>
                                 <span class="error_wrong">올바른 이메일 형식이 아닙니다.</span>
+                                <span class="error_useUpperance">이메일은 소문자로만 입력해주세요.</span>
                             </div>
                         </div>
                         <div class="join_name_wrapper">
                             <div>
                                 <label for="">
                                     <span class="input_guide">이름 입력</span>
-                                    <input required type="text" name="user_name" class="ji_style join_name_input"
-                                        placeholder="이름" required>
+                                    <input required autocapitalize="off" autocomplete="off" autocorrect="off"
+                                        type="text" name="user_name" class="ji_style join_name_input" placeholder="이름"
+                                        required>
                                     <span class="success_mes"><i class="fas fa-check"></i></span>
                                 </label>
                             </div>
@@ -136,7 +142,7 @@
                                 <span class="error_m_i"><i class="fas fa-exclamation-circle"></i></span>
                                 <span class="error_require">이름을 입력해주세요.</span>
                                 <span class="error_wrong">한글 또는 영문으로 입력해주세요.</span>
-                                <span class="error_special">2글자 이상의 이름을 정확히 입력해주세요.</span>
+                                <span class="error_lenght">2글자 이상의 이름을 정확히 입력해주세요.</span>
                             </div>
                         </div>
                         <div class="sel_in">
@@ -147,8 +153,9 @@
                                 <div>
                                     <label for="">
                                         <span class="input_guide">예: 1995</span>
-                                        <input required type="text" maxlength="4" name="user_birth"
-                                            class="ji_style join_birth_input" placeholder="출생년도">
+                                        <input oninput="maxLengthCheck(this)" autocapitalize="off" autocomplete="off"
+                                            autocorrect="off" inputmode="numeric" type="number" maxlength="4"
+                                            name="user_birth" class="ji_style join_birth_input" placeholder="출생년도">
                                         <span class="success_mes half_sm"><i class="fas fa-check"></i></span>
                                     </label>
                                 </div>
