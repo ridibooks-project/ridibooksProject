@@ -12,18 +12,18 @@
 	
 	<div class="container">
 	    <div class="login_wrap">
-	        <form action="#" method="post">
+	        <form action="member/controller" method="post">
 	            <div class="ip_box">
 	                <label class="ip_label" for="">
-	                    <input class="idpw_ip id_ip" name="user_id" type="text" maxlength="20" placeholder="아이디">
+	                    <input class="idpw_ip id_ip" name="login_id" type="text" maxlength="20" placeholder="아이디">
 	                </label>
 	                <label class="ip_label" for="">
-	                    <input class="idpw_ip pw_ip" name="user_pw" type="password" maxlength="25"
+	                    <input class="idpw_ip pw_ip" name="login_pw" type="password" maxlength="25"
 	                        placeholder="비밀번호">
 	                </label>
 	                <div class="ip_btn_box">
 	                    <div class="ch_wrap">
-	                        <input class="ch_ip" type="checkbox">
+	                        <input class="ch_ip" type="checkbox" name="stay_login">
 	                        <span>로그인 상태 유지</span>
 	                    </div>
 	                    <div class="findidpw_box">

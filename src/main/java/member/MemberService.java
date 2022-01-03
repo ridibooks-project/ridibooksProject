@@ -9,38 +9,38 @@ import javax.servlet.http.HttpSession;
 public class MemberService {
 	int statusCode;
 	
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	public int loginMember(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("login_id");
 		String pw = request.getParameter("login_pw");
 		String stay_login = request.getParameter("stay_login");
 		
-		// °ËÁõÄÚµå ÀÚ¹Ù½ºÅ©¸³Æ®·Î? ¿©±â¼­ ±¸Çö?
-		// ·Î±×ÀÎÇÒ ¶§ °ËÁõÇÒ °Í
-		// 1. id, pw °ªÀÌ null ¶Ç´Â °ø¹éÀÎÁö
-		// ÆĞÅÏ È®ÀÎÀº ·Î±×ÀÎÀÌ´Ï ÇÒ ÇÊ¿ä ¾øÀ½
+		// ê²€ì¦ì½”ë“œ ìë°”ìŠ¤í¬ë¦½íŠ¸ë¡œ? ì—¬ê¸°ì„œ êµ¬í˜„?
+		// ë¡œê·¸ì¸í•  ë•Œ ê²€ì¦í•  ê²ƒ
+		// 1. id, pw ê°’ì´ null ë˜ëŠ” ê³µë°±ì¸ì§€
+		// íŒ¨í„´ í™•ì¸ì€ ë¡œê·¸ì¸ì´ë‹ˆ í•  í•„ìš” ì—†ìŒ
 		
 		MemberDTO member = new MemberDTO();
 		member.setId(id);
 		member.setPw(pw);
 		
 		MemberDAO dao = new MemberDAO();
-		String db_Pw = dao.selectMember(member);
+		boolean login = dao.selectMember(member);
 		
-		if(db_Pw.equals(member.getPw())) {
+		if(login) {
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("isLogin", true);
 			session.setAttribute("id", id);
 			
 			if(stay_login == null) {
-				// ·Î±×ÀÎ»óÅÂÀ¯Áö Ã¼Å©°¡ ¾ÈµÇ¾î ÀÖ¾ú´Ù¸é
-				session.setMaxInactiveInterval(3600);	// 1½Ã°£
+				// ë¡œê·¸ì¸ìƒíƒœìœ ì§€ ì²´í¬ê°€ ì•ˆë˜ì–´ ìˆì—ˆë‹¤ë©´
+				session.setMaxInactiveInterval(3600);	// 1ì‹œê°„
 			} else {
-				// Ã¼Å© µÇ¾ú´Ù¸é
-				session.setMaxInactiveInterval(3600 * 24 * 3);	// 3ÀÏ
+				// ì²´í¬ ë˜ì—ˆë‹¤ë©´
+				session.setMaxInactiveInterval(3600 * 24 * 3);	// 3ì¼
 			}
-			statusCode = HttpServletResponse.SC_CREATED;
+			statusCode = HttpServletResponse.SC_OK;
 		} else {
 			statusCode = HttpServletResponse.SC_NOT_FOUND;
 		}
@@ -48,11 +48,11 @@ public class MemberService {
 		return statusCode;
 	}
 	
-	// È¸¿ø°¡ÀÔ
+	// íšŒì›ê°€ì…
 	public int joinMember(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("sign_id");
 		String pw = request.getParameter("sign_pw");
-//		String pwChk = request.getParameter("sign_pwChk"); °ËÁõÄÚµå¸¦ ¾îµğ¼­ ¾µÁö¿¡ µû¶ó »èÁ¦ÇÒ ¼öµµ ÀÖÀ½
+//		String pwChk = request.getParameter("sign_pwChk"); ê²€ì¦ì½”ë“œë¥¼ ì–´ë””ì„œ ì“¸ì§€ì— ë”°ë¼ ì‚­ì œí•  ìˆ˜ë„ ìˆìŒ
 		String email = request.getParameter("sign_email");
 		String name = request.getParameter("sign_name");
 		String year = request.getParameter("sign_year");
@@ -86,13 +86,13 @@ public class MemberService {
 		return 0;
 	}
 	
-	// Á¤º¸ ¼öÁ¤
+	// ì •ë³´ ìˆ˜ì •
 	public int updateMember(HttpServletRequest request, HttpServletResponse response) {
 		
 		return 0;
 	}
 	
-	// È¸¿ø Å»Åğ
+	// íšŒì› íƒˆí‡´
 	public int deleteMember(HttpServletRequest request, HttpServletResponse response) {
 		
 		return 0;

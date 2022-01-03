@@ -2,7 +2,6 @@ package member;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,32 +12,38 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	// Á¶È¸ - ·Î±×ÀÎ µî
+	// ì •ë³´ ì¡°íšŒ - ë¡œê·¸ì¸
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberService service = new MemberService();
 		int statusCode = service.loginMember(request, response);
 		
-//		 response.setStatus(statusCode);
+		if(statusCode == 200) {
+			// ë¡œê·¸ì¸ ì„±ê³µí–ˆì„ ë•Œ
+			response.sendRedirect("#");
+		} else {
+			// ë¡œê·¸ì¸ ì‹¤íŒ¨í–ˆì„ ë•Œ(Not Found)
+			response.sendRedirect("#");
+		}
 		
-		response.sendRedirect("/ridibooksProject/join/memberOutput.jsp");
+		
 		
 		
 		
 	}
 
-	// »ı¼º - È¸¿ø°¡ÀÔ
+	// ì •ë³´ ì¶”ê°€ - íšŒì›ê°€ì…
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	doGet(request, response);
 		
 	}
 	
-	// ¾÷µ¥ÀÌÆ® - º¯°æ µî
+	// ì •ë³´ ìˆ˜ì • - íšŒì›ì •ë³´ ìˆ˜ì •
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
 
-	// »èÁ¦ - È¸¿øÅ»Åğ
+	// ì •ë³´ ì‚­ì œ - íšŒì›íƒˆí‡´ ( updateì“¸ê²ƒ)
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}

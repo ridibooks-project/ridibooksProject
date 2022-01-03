@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 
 public class MemberDAO {
-	// ¼­¹ö Á¢¼Ó
+	// ì„œë²„ ì ‘ì†
 	public static Connection getConnection() {
 		Connection conn = null;
 		
@@ -25,26 +25,28 @@ public class MemberDAO {
 			return conn;
 		} catch(NamingException e) {
 //			e.printStackTrace();
-			System.out.println("Connection Pool °ü·Ã ¿¹¿Ü ¹ß»ı");
+			System.out.println("Connection Pool ê´€ë ¨ ì˜ˆì™¸ ë°œìƒ");
 		} catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Conncetion ¿¹¿Ü ¹ß»ı");
+			System.out.println("Conncetion ì˜ˆì™¸ ë°œìƒ");
 		}
 		return null;
 	}
 	
-	// db Á¤º¸ Á¶È¸ - ·Î±×ÀÎ
+	// db ì •ë³´ ì¡°íšŒ - ë¡œê·¸ì¸
 	
-	// ÄÚµå ¼öÁ¤ ÇÊ¿ä
-	// 1. MemberService ·Î °¡¼­ ºñ¹Ğ¹øÈ£¸¦ Ã¼Å©ÇÏÁö ¸»°í ¿©±â¼­ Ã¼Å©ÇÏ°í
-	//    Ã¼Å© ÈÄ ¸Â´ÂÁö ¾Æ´ÑÁö °á°ú °ªÀ» return
-	// 2. ¸¸¾à ºñ¹Ğ¹øÈ£°¡ ¸ÂÀ¸¸é db¿¡¼­ ÇØ´ç idÀÇ login_date °ªÀ» ¼öÁ¤ÇÏ´Â ÄÚµå Ãß°¡
-	public String selectMember(MemberDTO member) {
+	// ì½”ë“œ ìˆ˜ì • í•„ìš”
+	// 1. MemberService ë¡œ ê°€ì„œ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì²´í¬í•˜ì§€ ë§ê³  ì—¬ê¸°ì„œ ì²´í¬í•˜ê³ 
+	//    ì²´í¬ í›„ ë§ëŠ”ì§€ ì•„ë‹Œì§€ ê²°ê³¼ ê°’ì„ return
+	// 2. ë§Œì•½ ë¹„ë°€ë²ˆí˜¸ê°€ ë§ìœ¼ë©´ dbì—ì„œ í•´ë‹¹ idì˜ login_date ê°’ì„ ìˆ˜ì •í•˜ëŠ” ì½”ë“œ ì¶”ê°€
+	public boolean selectMember(MemberDTO member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String member_pw = "";
+		boolean login = false;
+		
+		String db_pw = "";
 		
 		try {
 			conn = getConnection();
@@ -56,14 +58,24 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				member_pw = rs.getString("member_pw");
+				db_pw = rs.getString("member_pw");
+				
+				if(db_pw.equals(member.getPw())) {
+					
+					login = true;
+					
+					sql = "UPDATE memberinfo SET login_date = ?";
+					
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setTimestamp(1, Timestamp.valueOf(member.getLogin_date()));
+				}
 			}
 			
 			rs.close();
 			
 		} catch(SQLException e) {
 //			e.printStackTrace();
-			System.out.println("SQL ¿¹¿Ü");
+			System.out.println("SQL ì˜ˆì™¸");
 		} finally {
 			if(pstmt != null) {
 				try {
@@ -81,10 +93,10 @@ public class MemberDAO {
 			}
 		}
 		
-		return member_pw;
+		return login;
 	}
 	
-	// db Á¤º¸ Ãß°¡ - È¸¿ø°¡ÀÔ
+	// db ì •ë³´ ì¶”ê°€ - íšŒì›ê°€ì…
 	public boolean insertMember(MemberDTO member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -111,12 +123,12 @@ public class MemberDAO {
 		return false;
 	}
 	
-	// db Á¤º¸ ¼öÁ¤
+	// db ì •ë³´ ìˆ˜ì •
 	public boolean updateMember(MemberDTO member) {
 		return false;
 	}
 	
-	// db Á¤º¸ »èÁ¦
+	// db ì •ë³´ ì‚­ì œ
 	public boolean deleteMember(MemberDTO member) {
 		return false;
 	}

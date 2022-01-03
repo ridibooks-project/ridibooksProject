@@ -2,20 +2,20 @@ package member;
 
 import java.time.LocalDateTime;
 
-// È¸¿ø Á¤º¸
+//íšŒì› ì •ë³´
 public class MemberDTO {
-	private String id;					// ¾ÆÀÌµğ
-	private String pw;					// ºñ¹Ğ¹øÈ£
-	private String email;				// ÀÌ¸ŞÀÏ
-	private String name;				// ÀÌ¸§
-	private String year;				// Ãâ»ı³âµµ(4ÀÚ¸®)
-	private String gender;				// ¼ºº° (³²,¿©)
-	private String marketing_agree;		// ¸¶ÄÉÆÃ ¼ö½Å¿©ºÎ(Y,N)
-	private String select_agree;		// °³ÀÎÁ¤º¸Á¦°ø µ¿ÀÇ¿©ºÎ(Y,N)
-	private LocalDateTime signup_date;	// È¸¿ø°¡ÀÔ ³¯Â¥
-	private LocalDateTime login_date;	// ¸¶Áö¸· ·Î±×ÀÎ ³¯Â¥
-	private int cash;					// º¸À¯ Ä³½¬
-	private int point;					// º¸À¯ Æ÷ÀÎÆ®
+	private String id;					// ì•„ì´ë””
+	private String pw;					// ë¹„ë°€ë²ˆí˜¸
+	private String email;				// ì´ë©”ì¼
+	private String name;				// ì´ë¦„
+	private String year;				// ì¶œìƒë…„ë„(4ìë¦¬)
+	private String gender;				// ì„±ë³„ (ë‚¨,ì—¬)
+	private String marketing_agree;		// ë§ˆì¼€íŒ… ìˆ˜ì‹ ì—¬ë¶€(Y,N)
+	private String select_agree;		// ê°œì¸ì •ë³´ì œê³µ ë™ì˜ì—¬ë¶€(Y,N)
+	private LocalDateTime signup_date;	// íšŒì›ê°€ì… ë‚ ì§œ
+	private LocalDateTime login_date;	// ë§ˆì§€ë§‰ ë¡œê·¸ì¸ ë‚ ì§œ
+	private int cash;					// ë³´ìœ  ìºì‰¬
+	private int point;					// ë³´ìœ  í¬ì¸íŠ¸
 
 	public String getId() {
 		return id;
