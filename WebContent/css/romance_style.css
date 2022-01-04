@@ -9,15 +9,16 @@
     color: #0077D9;
 }
 /* 오늘의 리디 탭 */
-.dk_bg_nav_prev::after, .dk_bg_nav_next::after{
-    font-size: 15px;
-    color: #ffffff;
+.todayRidiTab{
+    padding-top: 31px;
+    padding-bottom: 36px;
 }
 
 .dk_int_text span{
     color: #ffffff;
     font-size: 13px;
 }
+
 /* 오늘의 리디 탭 */
 
 /* 실시간 랭킹 탭 */
@@ -29,57 +30,35 @@
     height: 87.800;
 }
 /* 실시간 랭킹 탭 */
-.kwad_tab{
-    margin-top: 30px;
-}
-.kwad_all_wrapper{
-    text-align: center;
-    width: 1000px;
-    overflow: hidden;
-    margin: 0 auto; 
-}
-.k_hd_t{
-    text-align: left;
-    margin-bottom: 25px;
-}
 
-.k_hd_t a{
-    font-size: 19px;
+/* bg_none 스와이퍼 */
+.newEBook_tab{
+    padding-top: 50px;
+    padding-bottom: 56px;
+   
 }
-.tag_box{
+.ne_text{
+    padding: 0 auto;
     display: flex;
-    margin-bottom: 6px;
+    flex-direction: column;
 }
-.tag_list{
-    height: 31px;
-    flex: none;
-    margin-left: 5px;
-}
-
-.tag_list a{
-    border: 1px solid #B8BFC4;
-    height: 30px;
-    border-radius: 20px;
-    display: block;
+.ne_bookName{
+    font-weight: 600;
     font-size: 14px;
-    line-height: 29px;
-    font-weight: bold;
-    color: #525A61;
-    padding: 0 10px;
 }
 
-.ad_mini_tab{
-    margin-top: 50px;
-    text-align: center;
+.ne_authorName{
+    font-weight: 100;
+    color: #636C73;
+}
+/* 오늘의 리디 */
+
+.p1000_tab{
+    padding-top: 50px;
+    padding-bottom: 28px;
 }
 
-.ad_mini_wrapper{
-    display: flex;
+.re_ws{
+    padding-top: 25px;
+    padding-bottom: 28px; 
 }
-
-.ad_mini_wrapper li{
-    margin: 0px 5px;
-    padding: 4px; 
-    
-}
-
