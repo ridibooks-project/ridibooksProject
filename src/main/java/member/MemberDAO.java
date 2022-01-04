@@ -66,8 +66,10 @@ public class MemberDAO {
 					
 					sql = "UPDATE memberinfo SET login_date = ?";
 					
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setTimestamp(1, Timestamp.valueOf(member.getLogin_date()));
+					PreparedStatement pstmt2 = conn.prepareStatement(sql);
+					pstmt2.setTimestamp(1, Timestamp.valueOf(member.getLogin_date()));
+					
+					pstmt2.close();
 				}
 			}
 			
