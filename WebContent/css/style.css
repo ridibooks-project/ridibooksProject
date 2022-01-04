@@ -345,51 +345,22 @@ nav{
     font-size: 16px;
 }
 /* 세일 아이콘 */
-
-
-/* 검정배경 슬라이드 탭 */
-
-.darkSlideTab{
-    padding-top: 31px;
-    padding-bottom: 36px;
-    background: url('../images/nbImg.png') left bottom no-repeat #17202e;
-    background-size: contain;
+/* 대여 아이콘 */
+.borrow_ad{
+    padding-top: 8px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #3EA590;
+    top: 2px;
+    left: 10px;
     text-align: center;
-}   
-
-.dark_sw_wrapper{
-    text-align: center;
-    width: 1200px;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto; 
 }
-.darkbg_swiper_wrapper{
-    text-align: center;
-    width: 1000px;
-    overflow: hidden;
-    margin: 0 auto; 
+.borrow_text{
+    color:#ffffff
 }
-.darkSlide_text{
-    text-align: left;
-    padding-left: 100px;
-    margin-bottom: 25px;
-}
-.darkSlide_text span{
-    color: #ffffff;
-    font-weight: 400;
-    font-size: 1.4em;
-}
-
-.dark_box_cont{
-    width: 1000px;
-}
-.dk_li_wrapper{
-    width: 1050px;
-}
-.dk_li{
-    width: 160px;
-}
+/* 대여 아이콘 */
 .navi_btn_wrapper{
     position: absolute;
     z-index: 20;
@@ -399,36 +370,49 @@ nav{
     background-color: #ffffff;
     border: none;
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 1;
 }
-.dk_bg_nav_prev::after, .dk_bg_nav_next::after{
-    font-size: 15px;
-    color: #ffffff;
+.navi_btn_wrapper:hover{
+    opacity: 0.6;
 }
 
-.dk_bg_nav_next{
+/* 검정 슬라이드 탭, 하얀 슬라이드 탭 공통 스타일 */
+.dark_sw_wrapper, .white_sw_wrapper{
+    text-align: center;
+    width: 1200px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+.darkbg_swiper_wrapper, .whitebg_swiper_wrapper{
+    text-align: center;
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+.darkSlide_text, .whiteSlide_text{
+    text-align: left;
+    padding-left: 100px;
+    margin-bottom: 25px;
+}
+.dark_box_cont, .white_box_cont{
+    width: 1000px;
+}
+.dk_li_wrapper,.wt_li_wrapper{
+    width: 1050px;
+}
+.dk_li,.wt_li{
+    width: 160px;
+}
+.dk_bg_nav_next, .wt_bg_nav_next{
     padding-left: 9px;
 }
 
-.dk_bg_nav_prev{
+.dk_bg_nav_prev, .wt_bg_nav_prev{
     padding-right: 11px;
 }
-
-.prev_btn_dk{
-    left: 4.5%;
-    background-color: #364050;
-    opacity: 1;
-}
-
-.next_btn_dk{
-    right: 4.5%;
-    background-color: #364050;
-    opacity: 1;
-}
-
 /* 책표지 부분 */
-.dk_all_wrapper{
-    width: 100%;
+.dk_all_wrapper, .wt_all_wrapper{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -436,32 +420,90 @@ nav{
     align-items: center;
 }
 
-.dk_bc_wrapper{
-    position: absolute;
+.dk_bc_wrapper, .wt_bc_wrapper{
     display: flex;
 }
-.dk_img_wrapper{
+.dk_img_wrapper, .wt_img_wrapper{
     text-align: center;
 }
-.dk_img_wrapper img{
+.dk_img_wrapper img, .wt_img_wrapper img{
     width: 140px;
     height: 207.66px;
 }
 
-
 /* 책표지 부분 */
-
 /* 책제목 저자 */
-.dk_int_text{
+.dk_int_text, .wt_int_text{
     background-color: none;
     text-align: center;
     margin: 0 auto;
-    padding-top: 220px;
-
 }
 /* 책제목 저자 */
+/* 검정 슬라이드 탭, 하얀 슬라이드 탭 공통 스타일 */
+
 /* 검정배경 슬라이드 탭 */
 
+.darkSlideTab{
+    background: url('../images/nbImg.png') left bottom no-repeat #17202e;
+    background-size: contain;
+    text-align: center;
+}   
+
+.darkSlide_text span{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+/* 스와이퍼 핸들러 */
+.dk_bg_nav_prev::after, .dk_bg_nav_next::after{
+    font-size: 15px !important;
+    color: #ffffff;
+}
+.prev_btn_dk{
+    left: 4.5%;
+    background-color: #364050;
+}
+
+.next_btn_dk{
+    right: 4.5%;
+    background-color: #364050;
+}
+/* 스와이퍼 핸들러 */
+
+
+/* 검정배경 슬라이드 탭 */
+
+/* 하얀배경 슬라이드 탭 */
+
+.whiteSlideTab{
+    text-align: center;
+}
+
+.whiteSlide_text span{
+    font-size: 19px;
+}
+
+/* 스와이퍼 핸들러 */
+.wt_bg_nav_prev::after, .wt_bg_nav_next::after{
+    font-size: 15px !important;
+    color: #CCCCCC;
+}
+
+
+.prev_btn_wt{
+    left: 4.5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 .5px 3px rgb(0 0 0 / 33%);
+}
+
+.next_btn_wt{
+    right: 4.5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0.8px 3px rgb(0 0 0 / 33%);
+}
+/* 스와이퍼 핸들러 */
+/* 하얀배경 슬라이드 탭 */
 
 /* 현재 시각기준 랭킹 */
 .rankBook_tab{
