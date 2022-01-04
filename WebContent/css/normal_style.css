@@ -56,7 +56,9 @@
 .sbn{
     padding-left: 9px;
 }
-
+.ev_b_wrapper{
+    opacity: 0.5;
+}
 .next_btn{
     right: 25%;
 }
