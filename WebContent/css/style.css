@@ -376,6 +376,93 @@ nav{
     opacity: 0.6;
 }
 
+
+/* 이벤트 슬라이드 탭 */
+.ev_sw_wrapper{
+    max-width: 1290px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.event_wrapper{
+    width: 100%; 
+    display: flex;
+    
+}
+.ev_pn_wrapper{
+    position: absolute;
+    bottom: 15px;
+    left: 63%;
+    width: 45px;
+    height: 20px;
+    background-color: black !important;
+    text-align: center;
+    opacity: 0.7;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+.ev_pn{
+    position: absolute;
+    top:0.7px;
+    color: white;
+    font-size: 10px !important;
+}
+
+.ev_pn::after{
+    font-weight: 800;
+}
+.nextSlide{
+    opacity: 0.8;
+    margin-left: 10px;
+    filter: brightness(50%);
+}
+.nextSlide img{
+    position: absolute;
+    top: 10px;
+    width: 408.5px !important;
+    height: 285px !important;
+}
+.prevSlide{
+    opacity: 0.8;
+    filter: brightness(50%);
+}
+.prevSlide img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 408.5px !important;
+    height: 285px !important;
+}
+.sbp::after, .sbn::after{
+    font-size: 15px !important;
+    color: #37527C;
+}
+.sbp{
+    padding-right: 11px;
+}
+
+.sbn{
+    padding-left: 9px;
+}
+
+.next_btn{
+    right: 25%;
+}
+.prev_btn{
+    left: 25%;
+}
+.event_slide img{
+    width: 430px;
+    height: 300px;
+    border-radius: 10px;
+}
+/* 이벤트 슬라이드 탭 */
+
+
+
+
 /* 검정 슬라이드 탭, 하얀 슬라이드 탭 공통 스타일 */
 .dark_sw_wrapper, .white_sw_wrapper{
     text-align: center;
@@ -664,3 +751,59 @@ padding: 4px 10px;
 
 }
 /* 별점 */
+
+/* 광고 태그, 카드 광고 */
+.kwad_tab{
+    margin-top: 30px;
+}
+.kwad_all_wrapper{
+    text-align: center;
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+.k_hd_t{
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.k_hd_t a{
+    font-size: 19px;
+}
+.tag_box{
+    display: flex;
+    margin-bottom: 6px;
+}
+.tag_list{
+    height: 31px;
+    flex: none;
+    margin-left: 5px;
+}
+
+.tag_list a{
+    border: 1px solid #B8BFC4;
+    height: 30px;
+    border-radius: 20px;
+    display: block;
+    font-size: 14px;
+    line-height: 29px;
+    font-weight: bold;
+    color: #525A61;
+    padding: 0 10px;
+}
+
+.ad_mini_tab{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.ad_mini_wrapper{
+    display: flex;
+}
+
+.ad_mini_wrapper li{
+    margin: 0px 5px;
+    padding: 4px; 
+    
+}
+/* 광고 태그, 카드 광고 */
