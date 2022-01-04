@@ -16,6 +16,7 @@ public class MemberDTO {
 	private LocalDateTime login_date;	// 마지막 로그인 날짜
 	private int cash;					// 보유 캐쉬
 	private int point;					// 보유 포인트
+	private String status;				// 회원상태(1-정상 / 2-탈퇴)
 
 	public String getId() {
 		return id;
@@ -111,5 +112,13 @@ public class MemberDTO {
 
 	public void setPoint(int point) {
 		this.point = point;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

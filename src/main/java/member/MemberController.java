@@ -24,20 +24,22 @@ public class MemberController extends HttpServlet {
 			// 로그인 실패했을 때(Not Found)
 			response.sendRedirect("#");
 		}
-		
-		
-		
-		
-		
 	}
 
 	// 정보 추가 - 회원가입
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	doGet(request, response);
+		MemberService service = new MemberService();
+		int statusCode = service.joinMember(request, response);
 		
+		if(statusCode == 201) {
+			// 회원가입 성공했을 때
+			response.sendRedirect("#");
+		} else {
+			// 회원가입 실패했을 때
+			response.sendRedirect("#");
+		}
 	}
-	
+		
 	// 정보 수정 - 회원정보 수정
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

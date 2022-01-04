@@ -1,7 +1,5 @@
 package member;
 
-import java.time.LocalDateTime;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -70,7 +68,6 @@ public class MemberService {
 		} else {
 			select_agree = "Y";
 		}
-		LocalDateTime ldt = LocalDateTime.now();
 		
 		MemberDTO member = new MemberDTO();
 		member.setId(id);
@@ -81,9 +78,22 @@ public class MemberService {
 		member.setGender(gender);
 		member.setMarketing_agree(marketing_agree);
 		member.setSelect_agree(select_agree);
-		member.setSignup_date(ldt);
 		
-		return 0;
+		MemberDAO dao = new MemberDAO();
+		boolean signup = dao.insertMember(member);
+		
+		if(signup) {
+			// 회원가입 성공 201
+			statusCode = HttpServletResponse.SC_CREATED;
+		} else {
+			// 회원가입 실패
+			// 근데 id 입력하면서 중복 확인하고 이메일 입력하면서 중복확인하면
+			// 실패할 이유가 있을까
+			// 또 이렇게 하려면 id중복확인 dao, 이메일확인 dao를 따로 만들어야 하는가
+			statusCode = HttpServletResponse.SC_NOT_FOUND;
+		}
+		
+		return statusCode;
 	}
 	
 	// 정보 수정

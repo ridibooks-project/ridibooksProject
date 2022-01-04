@@ -12,13 +12,13 @@
 	
 	<div class="container">
 		<div class="join_wrap">
-            <form action="" method="post" class="join_form">
+            <form action="/ridibooksProject/member/controller" method="post" class="join_form">
                 <div class="join_ip_wrapper">
                     <div class="join_id_wrapper">
                         <div>
                             <label>
                                 <span class="input_guide">5~20자 영문,숫자 입력</span>
-                                <input type="text" name="user_id" autocapitalize="off" autocomplete="off"
+                                <input type="text" name="sign_id" autocapitalize="off" autocomplete="off"
                                     autocorrect="off" class="ji_style join_id_input" maxlength="20"
                                     placeholder="아이디" required>
                             </label>
@@ -69,7 +69,7 @@
                             <label for="">
                                 <div>
                                     <span class="input_guide">8자 이상, 영문/숫자/특수문자중 2가지 이상 입력</span>
-                                    <input type="password" name="user_id" autocapitalize="off" autocomplete="off"
+                                    <input type="password" name="sign_pw" autocapitalize="off" autocomplete="off"
                                         autocorrect="off" class="ji_style join_pw_input" placeholder="비밀번호"
                                         required>
                                     <span class="success_mes"><i class="fas fa-check"></i></span>
@@ -77,7 +77,7 @@
                                 <div>
                                     <span class="input_guide">비밀번호 재입력</span>
                                     <input autocapitalize="off" autocomplete="off" autocorrect="off" type="password"
-                                        name="user_id" class="ji_style join_rpw_input" placeholder="비밀번호 확인"
+                                        name="sign_pwChk" class="ji_style join_rpw_input" placeholder="비밀번호 확인"
                                         required>
                                     <span class="success_mes"><i class="fas fa-check"></i></span>
                                 </div>
@@ -99,7 +99,7 @@
                             <label for="">
                                 <span class="input_guide">이메일 주소 입력</span>
                                 <input required autocapitalize="off" autocomplete="off" autocorrect="off"
-                                    type="email" name="user_email" class="ji_style join_em_input"
+                                    type="email" name="sign_email" class="ji_style join_em_input"
                                     placeholder="이메일 주소" required>
                                 <span class="success_mes"><i class="fas fa-check"></i></span>
                             </label>
@@ -116,7 +116,7 @@
                             <label for="">
                                 <span class="input_guide">이름 입력</span>
                                 <input required autocapitalize="off" autocomplete="off" autocorrect="off"
-                                    type="text" name="user_name" class="ji_style join_name_input" placeholder="이름"
+                                    type="text" name="sign_name" class="ji_style join_name_input" placeholder="이름"
                                     required>
                                 <span class="success_mes"><i class="fas fa-check"></i></span>
                             </label>
@@ -138,7 +138,7 @@
                                     <span class="input_guide">예: 1995</span>
                                     <input oninput="maxLengthCheck(this)" autocapitalize="off" autocomplete="off"
                                         autocorrect="off" inputmode="numeric" type="number" maxlength="4"
-                                        name="user_birth" class="ji_style join_birth_input" placeholder="출생년도">
+                                        name="sign_year" class="ji_style join_birth_input" placeholder="출생년도">
                                     <span class="success_mes half_sm"><i class="fas fa-check"></i></span>
                                 </label>
                             </div>
@@ -156,7 +156,7 @@
                                     <button type="button" class="gender_ipw ji_style">여</button>
                                 </div>
                             </div>
-                            <input type="text" class="gender_input" name="user_gender" value="">
+                            <input type="text" class="gender_input" name="sign_gender" value="">
                         </div>
                     </div>
                     <div class="join_checkbox_wrapper">
@@ -187,7 +187,7 @@
                             </div>
                             <div class="ec_style">
                                 <div>
-                                    <input type="checkbox" value="off" name="message_agreement"
+                                    <input type="checkbox" value="off" name="marketing_agree"
                                         class="eo_checkbox eo2 checkbox_style">
                                     <span class="check_blue">
                                         <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
@@ -200,7 +200,7 @@
                             </div>
                             <div class="joinEcFlex ec_style">
                                 <div>
-                                    <input type="checkbox" value="off" name="birth_agreement"
+                                    <input type="checkbox" value="off" name="select_agree"
                                         class="eo_checkbox eo3 checkbox_style">
                                     <span class="check_blue">
                                         <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
