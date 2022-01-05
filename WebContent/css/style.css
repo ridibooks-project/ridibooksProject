@@ -180,9 +180,7 @@ nav{
 
 /* 헤더 */
 /* 서브 메뉴 */
-.sub_menu{
-    border-bottom: 1px solid #ced0d3;   
-}
+
 .hd_sub_menu{
     max-width: 1000px;
     margin: 0 auto;
@@ -227,7 +225,7 @@ nav{
 
 
 .sub_sb_menu div ul{
-    margin: 0 auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
 }
@@ -239,6 +237,13 @@ nav{
 .sub_web{
     padding: 10px 0 10px 10px;
     margin: 0 0 0 16px;
+}
+.sub_cartoon{
+    padding: 10px 10px 10px 0;
+    margin: 0 16px;
+}
+.sub_webtoon{
+    padding: 10px 0 10px 0;
 }
 .right_border_line{
     width: 100%;
