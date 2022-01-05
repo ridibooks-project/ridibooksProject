@@ -25,14 +25,5 @@ public class MemberController extends HttpServlet {
 			response.sendRedirect("#");
 		}
 	}
-		
-	// 정보 수정 - 회원정보 수정
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-
-	// 정보 삭제 - 회원탈퇴 ( update쓸것)
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
+	// 가입, 수정, 탈퇴도 post 메서드로 받으니 controller를 따로 만들 것
 }

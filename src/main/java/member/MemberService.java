@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class MemberService {
-	int statusCode;
+	
+	// 리턴할 http 응답코드 - 기본값으로 입력 값이 없거나, 패턴가 맞지 않을 때의 응답코드로 지정
+	int statusCode = 400;
 	
 	// 로그인
 	public int loginMember(HttpServletRequest request, HttpServletResponse response) {
@@ -105,7 +107,42 @@ public class MemberService {
 	// 회원 탈퇴
 	public int deleteMember(HttpServletRequest request, HttpServletResponse response) {
 		
-		return 0;
+		// 어차피 로그인을 해야 마이리디 페이지에 접속 가능하니 로그인 상태를 확인하는 코드는 필요 없을 듯
+		// 그럼 회원상태가 정상이 아니면 로그인도 안되게 할 거니 회원상태 확인하는 코드도 필요 없을지도
+//		HttpSession session = request.getSession();
+//		
+//		boolean isLogin = (boolean) session.getAttribute("isLogin");
+//		
+//		if(isLogin) {
+//			
+//		}
+		
+		HttpSession session = request.getSession();
+		
+		// 로그인할 때 id 값을 세션에 저장했으니 불러와서 저장
+		String loginId = (String) session.getAttribute("id");
+		
+		String delete_pwChk = request.getParameter("delete_pwChk");
+		
+		MemberDTO member = new MemberDTO();
+		member.setId(loginId);
+		member.setPwChk(delete_pwChk);
+		
+		MemberDAO dao = new MemberDAO();
+		boolean delete = dao.deleteMember(member);
+			
+		if(delete) {
+			statusCode = HttpServletResponse.SC_OK;
+				
+			// 회원탈퇴하면 로그아웃 되게 만들기 - 세션 제거 뭐가 좋을지 찾아보기
+			// 해당 세션의 값 삭제
+			session.removeAttribute("isLogin");
+			session.removeAttribute("id");
+				
+			// 세션 전체 제거
+//			session.invalidate();
+		}
+		return statusCode;
 	}
 
 }

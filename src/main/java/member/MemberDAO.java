@@ -66,18 +66,17 @@ public class MemberDAO {
 					// db_status가 1 일 때 (회원상태가 정상 일 때)
 					if(db_pw.equals(member.getPw())) {
 						
-						login = true;
-						
 						sql = "UPDATE memberinfo SET login_date = ?";
 						
 						PreparedStatement pstmt2 = conn.prepareStatement(sql);
 						pstmt2.setTimestamp(1, Timestamp.valueOf(member.getLogin_date()));
 						
+						login = true;
+						
 						pstmt2.close();
 					}
 				}
 			}
-			
 			rs.close();
 			
 		} catch(SQLException e) {
@@ -99,7 +98,6 @@ public class MemberDAO {
 				}
 			}
 		}
-		
 		return login;
 	}
 	
@@ -128,6 +126,7 @@ public class MemberDAO {
 			pstmt.setString(8, member.getSelect_agree());
 			pstmt.setTimestamp(9, Timestamp.valueOf(member.getSignup_date()));
 			
+			// executeUpdate() 값이 얼마인지 확인할 것
 			int count = pstmt.executeUpdate();
 			
 			signup = count == 1;
@@ -151,7 +150,6 @@ public class MemberDAO {
 				}
 			}
 		}
-		
 		return signup;
 	}
 	
@@ -160,9 +158,60 @@ public class MemberDAO {
 		return false;
 	}
 	
-	// db 정보 삭제
+	// db 정보 삭제 - 회원탈퇴
 	public boolean deleteMember(MemberDTO member) {
-		return false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		boolean delete = false;
+		
+		String db_pw = "";
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT member_pw FROM memberinfo WHERE member_id = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getId());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				db_pw = rs.getString("member_pw");
+				
+				if(db_pw.equals(member.getPwChk())) {
+						
+					// 회원상태(status) 2가 탈퇴상태 이니 2 입력
+					sql = "UPDATE memberinfo SET status = 2";
+					PreparedStatement pstmt2 = conn.prepareStatement(sql);
+					
+					delete = true;
+					
+					pstmt2.close();
+				}
+			}
+			rs.close();
+			
+		} catch(SQLException e) {
+//			e.printStackTrace();
+			System.out.println("SQL 예외");
+		} finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return delete;
 	}
-
 }

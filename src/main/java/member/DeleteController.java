@@ -6,24 +6,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-// 회원가입 컨트롤러
-@WebServlet("/signup/controller")
-public class SignupController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	// 회원가입
+@WebServlet("/delete/controller")
+public class DeleteController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberService service = new MemberService();
-		int statusCode = service.joinMember(request, response);
+		int statusCode = service.deleteMember(request, response);
 		
-		if(statusCode == 201) {
-			// 회원가입 성공했을 때
-			response.sendRedirect("#");
-		} else if(statusCode == 400) {
-			// 회원가입 실패했을 때
+		if(statusCode == 200) {
+			// 회원탈퇴 성공했을 때
 			response.sendRedirect("#");
 		} else {
-			// 회원가입 실패했을 때 - 404
+			// 회원탈퇴 실패했을 때 - 400
 			response.sendRedirect("#");
 		}
 	}

@@ -17,6 +17,7 @@ public class MemberDTO {
 	private int cash;					// 보유 캐쉬
 	private int point;					// 보유 포인트
 	private String status;				// 회원상태(1-정상 / 2-탈퇴)
+	private String pwChk;				// 비밀번호 확인
 
 	public String getId() {
 		return id;
@@ -120,5 +121,13 @@ public class MemberDTO {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getPwChk() {
+		return pwChk;
+	}
+
+	public void setPwChk(String pwChk) {
+		this.pwChk = pwChk;
 	}
 }
