@@ -1,6 +1,10 @@
 body{
     background: #EBF6FF;
 }
+nav{
+    padding: 0;
+    display: block;
+}
 /* 헤더 */
 .login_hd_wrap{
     border-bottom: 1px solid #d6deeb;
