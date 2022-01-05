@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	// 정보 조회 - 로그인
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// 로그인
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberService service = new MemberService();
 		int statusCode = service.loginMember(request, response);
 		
@@ -22,20 +22,6 @@ public class MemberController extends HttpServlet {
 			response.sendRedirect("#");
 		} else {
 			// 로그인 실패했을 때(Not Found)
-			response.sendRedirect("#");
-		}
-	}
-
-	// 정보 추가 - 회원가입
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberService service = new MemberService();
-		int statusCode = service.joinMember(request, response);
-		
-		if(statusCode == 201) {
-			// 회원가입 성공했을 때
-			response.sendRedirect("#");
-		} else {
-			// 회원가입 실패했을 때
 			response.sendRedirect("#");
 		}
 	}

@@ -12,7 +12,7 @@
 	
 	<div class="container">
 	    <div class="login_wrap">
-	        <form action="/member/controller" method="post">
+	        <form action="/ridibooksProject/member/controller" method="post">
 	            <div class="ip_box">
 	                <label class="ip_label" for="">
 	                    <input class="idpw_ip id_ip" name="login_id" type="text" maxlength="20" placeholder="아이디">
