@@ -5,7 +5,10 @@ section{
     margin-top: 22px;
     width: 100%;
 }
-
+nav{
+    padding: 0;
+    display: block;
+}
 /* 헤더 */
 .join_hd_wrap{
     border-bottom: 1px solid #d6deeb;
