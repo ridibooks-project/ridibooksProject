@@ -1,9 +1,9 @@
-.rom_cg{
+.bl_cg{
     font-weight: 600;
     color: #0077D9;
 }
 
-.sub_web{
+.sub_e{
     font-weight: 600;
     color: #0077D9;
 }
@@ -11,7 +11,17 @@
 .ev_b_wrapper{
     opacity: .5;
 }
+.todayRidiTab{
+    padding-top: 31px;
+    padding-bottom: 36px;
+}
 
+.dk_int_text span{
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* 오늘의 리디 탭 */
 /* 이벤트 카드뉴스 이미지 */
 /* 실시간 랭킹 탭 */
 .rb_li_wrapper li{
