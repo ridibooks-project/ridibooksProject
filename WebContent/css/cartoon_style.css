@@ -1,5 +1,4 @@
-
-.rom_cg{
+.car_cg{
     font-weight: 600;
     color: #0077D9;
 }
@@ -8,6 +7,7 @@
     font-weight: 600;
     color: #0077D9;
 }
+
 /* 오늘의 리디 탭 */
 .todayRidiTab{
     padding-top: 31px;

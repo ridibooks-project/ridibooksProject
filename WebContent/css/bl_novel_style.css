@@ -1,5 +1,4 @@
-
-.rom_cg{
+.bl_cg{
     font-weight: 600;
     color: #0077D9;
 }
@@ -8,7 +7,10 @@
     font-weight: 600;
     color: #0077D9;
 }
-/* 오늘의 리디 탭 */
+
+.ev_b_wrapper{
+    opacity: .5;
+}
 .todayRidiTab{
     padding-top: 31px;
     padding-bottom: 36px;
@@ -20,7 +22,7 @@
 }
 
 /* 오늘의 리디 탭 */
-
+/* 이벤트 카드뉴스 이미지 */
 /* 실시간 랭킹 탭 */
 .rb_li_wrapper li{
     display: flex;
@@ -30,35 +32,13 @@
     height: 87.800;
 }
 /* 실시간 랭킹 탭 */
-
-/* bg_none 스와이퍼 */
 .newEBook_tab{
-    padding-top: 50px;
-    padding-bottom: 56px;
-   
+    padding: 50px 0 56px 0;
 }
-.ne_text{
-    padding: 0 auto;
-    display: flex;
-    flex-direction: column;
+.re_ws{
+    padding: 50px 0 56px 0;
 }
-.ne_bookName{
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.ne_authorName{
-    font-weight: 100;
-    color: #636C73;
-}
-/* 오늘의 리디 */
 
 .p1000_tab{
-    padding-top: 50px;
-    padding-bottom: 28px;
-}
-
-.re_ws{
-    padding-top: 25px;
-    padding-bottom: 28px; 
+    padding: 50px 0 56px 0;
 }

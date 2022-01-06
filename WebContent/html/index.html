@@ -6,7 +6,7 @@
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>일반도서 - 리디북스</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link href="../css/normal_style.css" rel="stylesheet" type="text/css">
 </head>
@@ -47,11 +47,11 @@
                                 <a class="login_btn" href="./account/login.html">로그인</a>
                             </li>
                         </ul>
-                        <form class="h_ip_box" action="#" method="get">
+                        <form class="h_ip_box" action="./search.html" method="get">
                             <div tabindex="-1" class="h_ip_wrap">
                                 <div class="h_ip_box">
                                     <label class="h_ip_l">
-                                        <input class="h_ip_search" type="text" maxlength="60"
+                                        <input class="h_ip_search" name="q" type="text" maxlength="60"
                                             placeholder="제목, 저자, 출판사 검색">
                                         <i class="fas fa-search"></i>
                                     </label>
@@ -114,40 +114,24 @@
                             </li>
                             <li>
                                 <div class="cg_menu cg_menu_text fan_cg">
-                                    <a href="#">판타지</a>
+                                    <a href="./index_fantasy.html">판타지</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="cg_menu cg_menu_text car_cg">
-                                    <a href="#">만화</a>
+                                    <a href="./index_cartoon.html">만화</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="cg_menu cg_menu_text bl_cg">
-                                    <a href="#">BL</a>
+                                    <a href="./index_bl.html">BL</a>
                                 </div>
                             </li>
                         </ul>
                     </li>
-                    <!-- <li>
+                    <li>
                         <hr class="hd_line_style">
                     </li>
-                    <li class="sub_sb_menu">
-                        <div>
-                            <ul>
-                                <li class="sub_web">
-                                    <div class="right_border_line">
-                                        <a href="">웹소설</a>
-                                    </div>
-                                </li>
-                                <li class="sub_e">
-                                    <div>
-                                        <a href="">e북</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
             </ul>
@@ -157,25 +141,55 @@
         <div class="ev_sw_wrapper">
             <div class="event_box swiper-container">
                 <div class="event_wrapper swiper-wrapper">
-                    <div class="event_slide event1 swiper-slide"></div>
-                    <div class="event_slide event2 swiper-slide"></div>
-                    <div class="event_slide event3 swiper-slide"></div>
-                    <div class="event_slide event4 swiper-slide"></div>
-                    <div class="event_slide event5 swiper-slide"></div>
-                    <div class="event_slide event6 swiper-slide"></div>
-                    <div class="event_slide event7 swiper-slide"></div>
-                    <div class="event_slide event8 swiper-slide"></div>
-                    <div class="event_slide event9 swiper-slide"></div>
-                    <div class="event_slide event10 swiper-slide"></div>
+                    <div class="event_slide event1 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211229101547_1640740547185.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event2 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211226145408_1640498048095.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event3 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211124173939_1637743179827.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event4 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211215020525_1639501525772.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event5 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211201113233_1638325953584.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event6 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211217093606_1639701366901.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event7 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211227101820_1640567900464.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event8 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211224141014_1640322614798.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event9 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211216172659_1639643219461.jpg"
+                            alt="">
+                    </div>
+                    <div class="event_slide event10 swiper-slide">
+                        <img src="https://active.ridibooks.com/ridibooks_top_banner/20211214105436_1639446876116.jpg"
+                            alt="">
+                    </div>
                 </div>
                 <div class="ev_pn_wrapper">
                     <div class="ev_pn swiper-pagination"></div>
                 </div>
 
-                <div class="navi_btn_wrapper prev_btn">
+                <div class="navi_btn_wrapper ev_b_wrapper prev_btn">
                     <span class="spbt sbp swiper-button-prev"></span>
                 </div>
-                <div class="navi_btn_wrapper next_btn">
+                <div class="navi_btn_wrapper ev_b_wrapper next_btn">
                     <span class="spbt sbn swiper-button-next"></span>
                 </div>
 
@@ -342,20 +356,20 @@
             </ul>
         </div>
     </section>
-    <section class="newBook_tab">
-        <div class="nb_sw_wrapper">
+    <section class="darkSlideTab newBook_tab">
+        <div class="dark_sw_wrapper">
             <div>
-                <div class="nb_ht">
+                <div class="darkSlide_text">
                     <span>집 앞 서점에 방금 나온 신간!</span>
                 </div>
-                <div class="newBook_swiper_wrapper">
-                    <div class="nb_box swiper-container">
-                        <ul class="nb_wrapper swiper-wrapper">
-                            <li class="nb_slide nb1 swiper-slide" data-hash="slide1">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                <div class="darkbg_swiper_wrapper">
+                    <div class="dark_box_cont swiper-container">
+                        <ul class="dk_li_wrapper swiper-wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide1">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -364,17 +378,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬1</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb2 swiper-slide" data-hash="slide2">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide2">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -383,17 +397,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬2</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb3 swiper-slide" data-hash="slide3">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide3">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -402,17 +416,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb4 swiper-slide" data-hash="slide4">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide4">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -421,17 +435,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb5 swiper-slide" data-hash="slide5">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide5">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -440,17 +454,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb6 swiper-slide" data-hash="slide6">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide6">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -459,17 +473,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb7 swiper-slide" data-hash="slide7">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide7">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -478,17 +492,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb8 swiper-slide" data-hash="slide8">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide8">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -497,17 +511,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb9 swiper-slide" data-hash="slide9">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide9">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -516,17 +530,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb10 swiper-slide" data-hash="slide10">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide10">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -535,17 +549,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb11 swiper-slide" data-hash="slide11">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide11">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -554,17 +568,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb12 swiper-slide" data-hash="slide12">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide12">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -573,17 +587,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb13 swiper-slide" data-hash="slide13">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide13">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -592,17 +606,17 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬</a></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nb_slide nb14 swiper-slide" data-hash="slide14">
-                                <div class="nb_all_wrapper">
-                                    <div class="nb_bc_wrapper">
+                            <li class="dk_li swiper-slide" data-hash="slide14">
+                                <div class="dk_all_wrapper">
+                                    <div class="dk_bc_wrapper">
                                         <a href="#">
-                                            <div class="nb_img_wrapper">
+                                            <div class="dk_img_wrapper">
                                                 <img
                                                     src="https://img.ridicdn.net/cover/1546000901/xxlarge?dpi=xxhdpi#1">
                                             </div>
@@ -611,19 +625,18 @@
                                             <span class="sale_text"><span class="sale_num">10</span>%</span>
                                         </div>
                                     </div>
-                                    <div class="nb_int_text">
+                                    <div class="dk_int_text tr_text">
                                         <h3><a href="#">신부 이태석</a></h3>
                                         <p><a href="#">이충렬14</a></p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-
-                        <div class="navi_btn_wrapper prev_btn_nb">
-                            <span class="spbt sbp_nb swiper-button-prev"></span>
+                        <div class="navi_btn_wrapper prev_btn_dk">
+                            <span class="dk_bg_nav_prev swiper-button-prev"></span>
                         </div>
-                        <div class="navi_btn_wrapper next_btn_nb">
-                            <span class="spbt sbn_nb swiper-button-next"></span>
+                        <div class="navi_btn_wrapper next_btn_dk">
+                            <span class="dk_bg_nav_next swiper-button-next"></span>
                         </div>
                     </div>
                 </div>
@@ -794,19 +807,19 @@
             </div>
         </div>
     </section>
-    <section class="todayRidi_tab">
-        <div class="tr_sw_wrapper">
-            <div class="tr_ht">
+    <section class="whiteSlideTab todayRidi_tab">
+        <div class="white_sw_wrapper">
+            <div class="whiteSlide_text">
                 <span>오늘, 리디의 발견</span>
             </div>
-            <div class="todayRidi_swiper_wrapper">
-                <div class="tr_box swiper-container">
-                    <ul class="tr_wrapper swiper-wrapper">
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide1">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+            <div class="whitebg_swiper_wrapper">
+                <div class="white_box_cont swiper-container">
+                    <ul class="wt_li_wrapper swiper-wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide1">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4650000003/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -814,16 +827,16 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>아무도 없는 곳<br>나는 무엇인가?</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide2">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide2">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/243000385/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -831,16 +844,16 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>음식인문학자의<br>음식문화사 대방출</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide3">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide3">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4650000003/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -848,16 +861,16 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>아무도 없는 곳<br>나는 무엇인가?</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide4">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide4">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/243000385/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -865,16 +878,16 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>음식인문학자의<br>음식문화사 대방출</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide5">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide5">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4650000003/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -882,16 +895,16 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>아무도 없는 곳<br>나는 무엇인가?</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide6">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide6">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/243000385/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -899,16 +912,16 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>음식인문학자의<br>음식문화사 대방출</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide7">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide" data-hash="slide7">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4650000003/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -916,16 +929,16 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>아무도 없는 곳<br>나는 무엇인가?</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide" data-hash="slide8">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="tr_slide swiper-slide" data-hash="slide8">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/243000385/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -933,16 +946,16 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>음식인문학자의<br>음식문화사 대방출</span>
                                 </div>
                             </div>
                         </li>
                         <li class="tr_slide swiper-slide" data-hash="slide9">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4650000003/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -950,16 +963,16 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>아무도 없는 곳<br>나는 무엇인가?</span>
                                 </div>
                             </div>
                         </li>
                         <li class="tr_slide swiper-slide" data-hash="slide10">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/243000385/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -967,18 +980,17 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="tr_int_text">
+                                <div class="wt_int_text">
                                     <span>음식인문학자의<br>음식문화사 대방출</span>
                                 </div>
                             </div>
                         </li>
-
                     </ul>
-                    <div class="navi_btn_wrapper prev_btn_tr">
-                        <span class="spbt sbp_tr swiper-button-prev"></span>
+                    <div class="navi_btn_wrapper prev_btn_wt">
+                        <span class="wt_bg_nav_prev swiper-button-prev"></span>
                     </div>
-                    <div class="navi_btn_wrapper next_btn_tr">
-                        <span class="spbt sbn_tr swiper-button-next"></span>
+                    <div class="navi_btn_wrapper next_btn_wt">
+                        <span class="wt_bg_nav_next swiper-button-next"></span>
                     </div>
                 </div>
             </div>
@@ -1220,19 +1232,19 @@
             </div>
         </div>
     </section>
-    <section class="weeklyNew_tab">
-        <div class="tr_sw_wrapper">
-            <div class="tr_ht">
+    <section class="whiteSlideTab weeklyNew_tab">
+        <div class="white_sw_wrapper">
+            <div class="whiteSlide_text">
                 <span>금주의 신간</span>
             </div>
-            <div class="todayRidi_swiper_wrapper">
-                <div class="wn_box swiper-container">
-                    <ul class="tr_wrapper swiper-wrapper">
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+            <div class="whitebg_swiper_wrapper">
+                <div class="white_box_cont swiper-container">
+                    <ul class="wt_li_wrapper swiper-wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4765000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1240,17 +1252,17 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>가장 무서운 이야기 게임</span>
                                     <span class="weight_lite">김건우</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4764000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1258,17 +1270,17 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>하늘 씨름</span>
                                     <span class="weight_lite">손지상</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4765000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1276,17 +1288,17 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>가장 무서운 이야기 게임</span>
                                     <span class="weight_lite">김건우</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4764000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1294,17 +1306,17 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>하늘 씨름</span>
                                     <span class="weight_lite">손지상</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4765000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1312,17 +1324,17 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>가장 무서운 이야기 게임</span>
                                     <span class="weight_lite">김건우</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4764000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1330,17 +1342,17 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>하늘 씨름</span>
                                     <span class="weight_lite">손지상</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4765000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1348,17 +1360,17 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>가장 무서운 이야기 게임</span>
                                     <span class="weight_lite">김건우</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4764000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1366,17 +1378,17 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>하늘 씨름</span>
                                     <span class="weight_lite">손지상</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4765000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1384,17 +1396,17 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>가장 무서운 이야기 게임</span>
                                     <span class="weight_lite">김건우</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4764000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1402,17 +1414,17 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>하늘 씨름</span>
                                     <span class="weight_lite">손지상</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4765000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1420,17 +1432,17 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>가장 무서운 이야기 게임</span>
                                     <span class="weight_lite">김건우</span>
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/4764000001/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1438,36 +1450,36 @@
                                         <span class="sale_text"><span class="sale_num">10</span>%</span>
                                     </div>
                                 </div>
-                                <div class="wn_int_text">
+                                <div class="wt_int_text wn_text">
                                     <span>하늘 씨름</span>
                                     <span class="weight_lite">손지상</span>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <div class="navi_btn_wrapper prev_btn_wn">
-                        <span class="spbt sbp_wn swiper-button-prev"></span>
+                    <div class="navi_btn_wrapper prev_btn_wt">
+                        <span class="wt_bg_nav_prev swiper-button-prev"></span>
                     </div>
-                    <div class="navi_btn_wrapper next_btn_wn">
-                        <span class="spbt sbn_wn swiper-button-next"></span>
+                    <div class="navi_btn_wrapper next_btn_wt">
+                        <span class="wt_bg_nav_next swiper-button-next"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="instagram_tab">
-        <div class="tr_sw_wrapper">
-            <div class="tr_ht">
+    <section class="whiteSlideTab instagram_tab">
+        <div class="white_sw_wrapper">
+            <div class="whiteSlide_text">
                 <a href="#"><span>리디북스토어 인스타그램 추천도서 ></span></a>
             </div>
-            <div class="todayRidi_swiper_wrapper">
-                <div class="i_box swiper-container">
-                    <ul class="tr_wrapper swiper-wrapper">
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+            <div class="whitebg_swiper_wrapper">
+                <div class="white_box_cont swiper-container">
+                    <ul class="wt_li_wrapper swiper-wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/852001027/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1475,10 +1487,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
-                                    <span>나는 어쩌다 명왕성을 죽였나</span>
+                                <div class="wt_int_text i_text">
+                                    <span>명왕성</span>
                                     <span class="weight_lite">마이크 브라운</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1491,11 +1503,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img
                                                 src="https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xhdpi#1 640w, https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xxhdpi#1">
                                         </div>
@@ -1504,10 +1516,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
+                                <div class="wt_int_text i_text">
                                     <span>일의 철학</span>
                                     <span class="weight_lite">데이브 에번스, 빌 버넷</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1520,11 +1532,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/852001027/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1532,10 +1544,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
-                                    <span>나는 어쩌다 명왕성을 죽였나</span>
+                                <div class="wt_int_text i_text">
+                                    <span>명왕성</span>
                                     <span class="weight_lite">마이크 브라운</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1548,11 +1560,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img
                                                 src="https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xhdpi#1 640w, https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xxhdpi#1">
                                         </div>
@@ -1561,10 +1573,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
+                                <div class="wt_int_text i_text">
                                     <span>일의 철학</span>
                                     <span class="weight_lite">데이브 에번스, 빌 버넷</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1577,11 +1589,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/852001027/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1589,10 +1601,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
-                                    <span>나는 어쩌다 명왕성을 죽였나</span>
+                                <div class="wt_int_text i_text">
+                                    <span>명왕성</span>
                                     <span class="weight_lite">마이크 브라운</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1605,11 +1617,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img
                                                 src="https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xhdpi#1 640w, https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xxhdpi#1">
                                         </div>
@@ -1618,10 +1630,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
+                                <div class="wt_int_text i_text">
                                     <span>일의 철학</span>
                                     <span class="weight_lite">데이브 에번스, 빌 버넷</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1634,11 +1646,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img src="https://img.ridicdn.net/cover/852001027/xxlarge?dpi=xxhdpi#1">
                                         </div>
                                     </a>
@@ -1646,10 +1658,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
-                                    <span>나는 어쩌다 명왕성을 죽였나</span>
+                                <div class="wt_int_text i_text">
+                                    <span>명왕성</span>
                                     <span class="weight_lite">마이크 브라운</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1662,11 +1674,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="tr_slide nb1 swiper-slide">
-                            <div class="tr_all_wrapper">
-                                <div class="tr_bc_wrapper">
+                        <li class="wt_li swiper-slide">
+                            <div class="wt_all_wrapper">
+                                <div class="wt_bc_wrapper">
                                     <a href="#">
-                                        <div class="tr_img_wrapper">
+                                        <div class="wt_img_wrapper">
                                             <img
                                                 src="https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xhdpi#1 640w, https://img.ridicdn.net/cover/606002339/xxlarge?dpi=xxhdpi#1">
                                         </div>
@@ -1675,10 +1687,10 @@
                                         <span class="borrow_text">대여</span>
                                     </div>
                                 </div>
-                                <div class="i_int_text">
+                                <div class="wt_int_text i_text">
                                     <span>일의 철학</span>
                                     <span class="weight_lite">데이브 에번스, 빌 버넷</span>
-                                    <div class="star_Review">
+                                    <div class="star_Review i_star_box">
                                         <!-- 별 프로그래스 바 -->
                                         <span class="star">
                                             ★★★★★
@@ -1692,21 +1704,24 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="navi_btn_wrapper prev_btn_wn">
-                        <span class="spbt sbp_i swiper-button-prev"></span>
+                    <div class="navi_btn_wrapper prev_btn_wt">
+                        <span class="wt_bg_nav_prev swiper-button-prev"></span>
                     </div>
-                    <div class="navi_btn_wrapper next_btn_wn">
-                        <span class="spbt sbn_i swiper-button-next"></span>
+                    <div class="navi_btn_wrapper next_btn_wt">
+                        <span class="wt_bg_nav_next swiper-button-next"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     </div>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/39caf77dda.js" crossorigin="anonymous"></script>
-    <script src="../js/normal_event.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/swiper-bundle.js"></script>
+    <script src="../js/fontawesome.js" crossorigin="anonymous"></script>
+    <script src="../js/notPosition.js"></script>
+    <script src="../js/slide_tab.js"></script>
+    <script src="../js/starPoint.js"></script>
+    <script src="../js/rem_recent_search.js"></script>
 </body>
 
 </html>
