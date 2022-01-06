@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 
 public class MemberDAO {
-	// ¼­¹ö Á¢¼Ó
+	// ì„œë²„ ì ‘ì†
 	public static Connection getConnection() {
 		Connection conn = null;
 		
@@ -25,45 +25,63 @@ public class MemberDAO {
 			return conn;
 		} catch(NamingException e) {
 //			e.printStackTrace();
-			System.out.println("Connection Pool °ü·Ã ¿¹¿Ü ¹ß»ı");
+			System.out.println("Connection Pool ê´€ë ¨ ì˜ˆì™¸ ë°œìƒ");
 		} catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Conncetion ¿¹¿Ü ¹ß»ı");
+			System.out.println("Conncetion ì˜ˆì™¸ ë°œìƒ");
 		}
 		return null;
 	}
 	
-	// db Á¤º¸ Á¶È¸ - ·Î±×ÀÎ
+	// db ì •ë³´ ì¡°íšŒ - ë¡œê·¸ì¸
 	
-	// ÄÚµå ¼öÁ¤ ÇÊ¿ä
-	// 1. MemberService ·Î °¡¼­ ºñ¹Ğ¹øÈ£¸¦ Ã¼Å©ÇÏÁö ¸»°í ¿©±â¼­ Ã¼Å©ÇÏ°í
-	//    Ã¼Å© ÈÄ ¸Â´ÂÁö ¾Æ´ÑÁö °á°ú °ªÀ» return
-	// 2. ¸¸¾à ºñ¹Ğ¹øÈ£°¡ ¸ÂÀ¸¸é db¿¡¼­ ÇØ´ç idÀÇ login_date °ªÀ» ¼öÁ¤ÇÏ´Â ÄÚµå Ãß°¡
-	public String selectMember(MemberDTO member) {
+	// ì½”ë“œ ìˆ˜ì • í•„ìš”
+	// 1. MemberService ë¡œ ê°€ì„œ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì²´í¬í•˜ì§€ ë§ê³  ì—¬ê¸°ì„œ ì²´í¬í•˜ê³ 
+	//    ì²´í¬ í›„ ë§ëŠ”ì§€ ì•„ë‹Œì§€ ê²°ê³¼ ê°’ì„ return
+	// 2. ë§Œì•½ ë¹„ë°€ë²ˆí˜¸ê°€ ë§ìœ¼ë©´ dbì—ì„œ í•´ë‹¹ idì˜ login_date ê°’ì„ ìˆ˜ì •í•˜ëŠ” ì½”ë“œ ì¶”ê°€
+	public boolean selectMember(MemberDTO member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String member_pw = "";
+		boolean login = false;
+		
+		String db_pw = "";
+		String db_status = "";
 		
 		try {
 			conn = getConnection();
 			
-			String sql = "SELECT member_pw FROM memberinfo WHERE member_id = ?";
+			String sql = "SELECT member_pw, status FROM memberinfo WHERE member_id = ?";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getId());
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				member_pw = rs.getString("member_pw");
+				db_pw = rs.getString("member_pw");
+				db_status = rs.getString("status");
+				
+				if(db_status.equals("1")) {
+					// db_statusê°€ 1 ì¼ ë•Œ (íšŒì›ìƒíƒœê°€ ì •ìƒ ì¼ ë•Œ)
+					if(db_pw.equals(member.getPw())) {
+						
+						sql = "UPDATE memberinfo SET login_date = ?";
+						
+						PreparedStatement pstmt2 = conn.prepareStatement(sql);
+						pstmt2.setTimestamp(1, Timestamp.valueOf(member.getLogin_date()));
+						
+						login = true;
+						
+						pstmt2.close();
+					}
+				}
 			}
-			
 			rs.close();
 			
 		} catch(SQLException e) {
 //			e.printStackTrace();
-			System.out.println("SQL ¿¹¿Ü");
+			System.out.println("SQL ì˜ˆì™¸");
 		} finally {
 			if(pstmt != null) {
 				try {
@@ -80,15 +98,15 @@ public class MemberDAO {
 				}
 			}
 		}
-		
-		return member_pw;
+		return login;
 	}
 	
-	// db Á¤º¸ Ãß°¡ - È¸¿ø°¡ÀÔ
+	// db ì •ë³´ ì¶”ê°€ - íšŒì›ê°€ì…
 	public boolean insertMember(MemberDTO member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		
+		boolean signup = false;
 		
 		try {
 			conn = getConnection();
@@ -97,6 +115,7 @@ public class MemberDAO {
 					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 			pstmt = conn.prepareStatement(sql);
+			
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getPw());
 			pstmt.setString(3, member.getEmail());
@@ -106,19 +125,93 @@ public class MemberDAO {
 			pstmt.setString(7, member.getMarketing_agree());
 			pstmt.setString(8, member.getSelect_agree());
 			pstmt.setTimestamp(9, Timestamp.valueOf(member.getSignup_date()));
+			
+			// executeUpdate() ê°’ì´ ì–¼ë§ˆì¸ì§€ í™•ì¸í•  ê²ƒ
+			int count = pstmt.executeUpdate();
+			
+			signup = count == 1;
+			
+		} catch(SQLException e) {
+//			e.printStackTrace();
+			System.out.println("SQL ì˜ˆì™¸");
+		} finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
-		
-		return false;
+		return signup;
 	}
 	
-	// db Á¤º¸ ¼öÁ¤
+	// db ì •ë³´ ìˆ˜ì •
 	public boolean updateMember(MemberDTO member) {
 		return false;
 	}
 	
-	// db Á¤º¸ »èÁ¦
+	// db ì •ë³´ ì‚­ì œ - íšŒì›íƒˆí‡´
 	public boolean deleteMember(MemberDTO member) {
-		return false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		boolean delete = false;
+		
+		String db_pw = "";
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT member_pw FROM memberinfo WHERE member_id = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getId());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				db_pw = rs.getString("member_pw");
+				
+				if(db_pw.equals(member.getPwChk())) {
+						
+					// íšŒì›ìƒíƒœ(status) 2ê°€ íƒˆí‡´ìƒíƒœ ì´ë‹ˆ 2 ì…ë ¥
+					sql = "UPDATE memberinfo SET status = 2";
+					PreparedStatement pstmt2 = conn.prepareStatement(sql);
+					
+					delete = true;
+					
+					pstmt2.close();
+				}
+			}
+			rs.close();
+			
+		} catch(SQLException e) {
+//			e.printStackTrace();
+			System.out.println("SQL ì˜ˆì™¸");
+		} finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return delete;
 	}
-
 }
