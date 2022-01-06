@@ -116,6 +116,7 @@ nav{
     font-size: 16px;
     line-height: 16px;
     letter-spacing: -0.03em;
+    padding-right: 20px;
     order: 2;
 }
 .h_ip_search:focus{
