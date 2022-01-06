@@ -160,3 +160,159 @@ section{
     box-shadow: 0 2px 4px 0 rgb(209 213 217 / 30%);
 }
 /* 컨텐츠 */
+
+
+/* 아이디 찾기 */
+.findID_wrap{
+    text-align: center;
+    width: 360px;
+    margin: 0 auto;
+    padding: 60px 0 70px;
+}
+.findID_ip_box{
+    margin-top: 10px;
+}
+.findID_hd_text{
+    line-height: 1em;
+    margin: 0;
+    margin-bottom: 12px;
+    color: #0077d9;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+.findID_ip{
+    width: 100%;
+    background-color: #ffffff;
+    height: 30px;
+    border: 1px solid #d6deeb;
+    height: 50px;
+    padding: 13px 17px;
+    overflow: hidden;
+    background: #fff;
+    color: #313538;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+}
+.findID_ip:hover{
+    border: 1px solid #9EA7AD;
+}
+.findID_ip:focus{
+    outline: 1px solid #1F8CE6;
+}
+.findID_btn_box{
+    padding-top: 10px;
+}
+.findID_btn{
+    background-color: #1F8CE6;
+    color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgb(31 140 230 / 30%);
+}
+.findID_guideText{
+    padding-top: 10px;
+}
+
+.findID_guideText span, .findID_guideText span a{
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.findID_guideText span a:hover{
+    background-color: #cccccc;
+}
+/* 아이디 찾기 */
+
+/* 비밀번호 찾기 */
+
+.findPW_wrap{
+    text-align: center;
+    width: 360px;
+    margin: 0 auto;
+    padding: 60px 0 70px;
+}
+.findID_ip_box{
+    margin-top: 10px;
+}
+.findPW_hd_text{
+    line-height: 1em;
+    margin: 0;
+    margin-bottom: 12px;
+    color: #0077d9;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+.findPW_ip{
+    width: 100%;
+    background-color: #ffffff;
+    height: 30px;
+    border: 1px solid #d6deeb;
+    height: 50px;
+    padding: 13px 17px;
+    overflow: hidden;
+    background: #fff;
+    color: #313538;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+}
+
+.findPW_ip:focus{
+    outline:none
+}
+
+.fp_ip_id{
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.fp_ip_em{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.fp_ip_id:hover{
+    border: 1px solid #9EA7AD;
+}
+.fp_ip_id:focus{
+    outline: 1px solid #1F8CE6;
+    border-bottom: 1px solid #1F8CE6;
+}
+
+.fp_ip_em:hover{
+    border: 1px solid #9EA7AD;
+}
+.fp_ip_em:focus{
+    outline: 1px solid #1F8CE6;
+}
+
+
+
+.findPW_btn_box{
+    padding-top: 10px;
+}
+.findPW_btn{
+    background-color: #1F8CE6;
+    color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgb(31 140 230 / 30%);
+}
+.findPW_guideText{
+    padding-top: 10px;
+}
+
+.findPW_guideText span, .findPW_guideText span a{
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.findPW_guideText span a:hover{
+    background-color: #cccccc;
+}
+/* 비밀번호 찾기 */
