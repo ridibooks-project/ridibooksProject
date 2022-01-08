@@ -8,10 +8,11 @@
     <link href="../css/login_style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<%@ include file="header.jsp" %>
-	
 	<div class="container">
 		<script src="../js/jquery-3.6.0.min.js"></script>
+
+		<%@ include file="header.jsp" %>
+	
 		<section>
 	        <div class="findID_wrap">
 	            <form action="../../src/main/java/member/find/" method="get">
@@ -30,11 +31,6 @@
 	            </div>
 	        </div>
 	
-	        <script>
-	            document.querySelector('.join_btn').onclick = () => {
-	                window.location = "./join_step.jsp";
-	            }
-	        </script>
 	    </section>
 	</div>
 	<script src="../js/fontawesome.js" crossorigin="anonymous"></script>

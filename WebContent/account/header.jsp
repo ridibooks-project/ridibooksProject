@@ -8,8 +8,6 @@
     <link href="../css/login_style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="container">
-		<script src="../js/jquery-3.6.0.min.js"></script>
 		<div class="login_hd_wrap">
 	        <header>
 	            <nav>
@@ -25,7 +23,6 @@
 	            </nav>
 	        </header>
 	    </div>
-    </div>
 
 </body>
 </html>
