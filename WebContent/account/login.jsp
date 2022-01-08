@@ -11,6 +11,7 @@
 	<%@ include file="header.jsp" %>
 	
 	<div class="container">
+		<script src="../js/jquery-3.6.0.min.js"></script>
 	    <div class="login_wrap">
 	        <form action="/ridibooksProject/member/controller" method="post">
 	            <div class="ip_box">
@@ -27,8 +28,8 @@
 	                        <span>로그인 상태 유지</span>
 	                    </div>
 	                    <div class="findidpw_box">
-	                        <a class="fd_id" href="#">아이디 찾기</a>
-	                        <a class="fd_pw" href="#">비밀번호 재설정</a>
+	                        <a class="fd_id" href="./findID.jsp">아이디 찾기</a>
+	                        <a class="fd_pw" href="./findPW.jsp">비밀번호 재설정</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -49,7 +50,7 @@
 	        }
 	    </script>
     </div>
-    <script src="https://kit.fontawesome.com/39caf77dda.js" crossorigin="anonymous"></script>
+    <script src="../js/fontawesome.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
