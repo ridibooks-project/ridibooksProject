@@ -11,7 +11,7 @@
 	<div class="container">
 		<script src="../js/jquery-3.6.0.min.js"></script>
 
-		<%@ include file="header.jsp" %>
+		<%@ include file="./header.jsp" %>
 	
 		<section>
 	        <div class="findID_wrap">
