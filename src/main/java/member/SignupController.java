@@ -18,13 +18,13 @@ public class SignupController extends HttpServlet {
 		
 		if(statusCode == 201) {
 			// 회원가입 성공했을 때
-			response.sendRedirect("#");
+			response.sendRedirect("/ridibooksProject/html/index.html");
 		} else if(statusCode == 400) {
 			// 회원가입 실패했을 때
-			response.sendRedirect("#");
+			response.sendRedirect("/ridibooksProject/account/signup.jsp");
 		} else {
 			// 회원가입 실패했을 때 - 404
-			response.sendRedirect("#");
+			response.sendRedirect("/ridibooksProject/account/signup.jsp");
 		}
 	}
 }

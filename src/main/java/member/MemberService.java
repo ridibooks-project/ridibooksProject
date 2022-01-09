@@ -1,5 +1,7 @@
 package member;
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,10 +17,13 @@ public class MemberService {
 		String pw = request.getParameter("login_pw");
 		String stay_login = request.getParameter("stay_login");
 		
-		// 검증코드 자바스크립트로? 여기서 구현?
-		// 로그인할 때 검증할 것
-		// 1. id, pw 값이 null 또는 공백인지
-		// 패턴 확인은 로그인이니 할 필요 없음
+		// 아이디 또는 비밀번호가 null일 경우
+		if(id == null || pw == null) {
+			
+			statusCode = HttpServletResponse.SC_BAD_REQUEST;
+			
+			return statusCode;
+		}
 		
 		MemberDTO member = new MemberDTO();
 		member.setId(id);
@@ -60,6 +65,7 @@ public class MemberService {
 		String marketing_agree = request.getParameter("marketing_agree");
 		String select_agree = request.getParameter("select_agree");
 		
+		// 이럴 필요 없이 html에서 value값을 넣으면 체크 시 value값이 넘어오지 않을까 - 추후 확인 후 변경해볼 것
 		if(marketing_agree == null) {
 			marketing_agree = "N";
 		} else {
@@ -71,6 +77,8 @@ public class MemberService {
 			select_agree = "Y";
 		}
 		
+		LocalDateTime ldt = LocalDateTime.now();
+		
 		MemberDTO member = new MemberDTO();
 		member.setId(id);
 		member.setPw(pw);
@@ -80,6 +88,7 @@ public class MemberService {
 		member.setGender(gender);
 		member.setMarketing_agree(marketing_agree);
 		member.setSelect_agree(select_agree);
+		member.setSignup_date(ldt);
 		
 		MemberDAO dao = new MemberDAO();
 		boolean signup = dao.insertMember(member);
