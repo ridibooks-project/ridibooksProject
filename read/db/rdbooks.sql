@@ -37,13 +37,14 @@ CREATE TABLE IF NOT EXISTS `memberinfo` (
   PRIMARY KEY (`id_no`),
   UNIQUE KEY `member_id` (`member_id`),
   UNIQUE KEY `member_email` (`member_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='회원정보 테이블';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='회원정보 테이블';
 
--- 테이블 데이터 rdbooks.memberinfo:~0 rows (대략적) 내보내기
+-- 테이블 데이터 rdbooks.memberinfo:~2 rows (대략적) 내보내기
 DELETE FROM `memberinfo`;
 /*!40000 ALTER TABLE `memberinfo` DISABLE KEYS */;
 INSERT INTO `memberinfo` (`id_no`, `member_id`, `member_pw`, `member_email`, `member_name`, `year`, `gender`, `marketing_agree`, `select_agree`, `signup_date`, `login_date`, `cash`, `point`) VALUES
-	(1, 'id0001', 'qwe123!!', 'id0001@naver.com', '홍길동', '1996', 'M', 'N', 'N', '2021-12-30 00:00:00', '2021-12-30 23:40:27', 0, 0);
+	(1, 'id0001', 'qwe123!!', 'id0001@naver.com', '홍길동', '1996', 'M', 'N', 'N', '2021-12-30 00:00:00', '2021-12-30 23:40:27', 0, 0),
+	(3, 'id0002', 'qwe123!!', 'id0002@naver.com', '두번째', '2000', NULL, 'Y', 'Y', '2022-01-09 23:45:22', NULL, 0, 0);
 /*!40000 ALTER TABLE `memberinfo` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

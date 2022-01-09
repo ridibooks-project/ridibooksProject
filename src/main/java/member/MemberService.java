@@ -61,7 +61,7 @@ public class MemberService {
 		String email = request.getParameter("sign_email");
 		String name = request.getParameter("sign_name");
 		String year = request.getParameter("sign_year");
-		String gender = request.getParameter("sing_gender");
+		String gender = request.getParameter("sign_gender");
 		String marketing_agree = request.getParameter("marketing_agree");
 		String select_agree = request.getParameter("select_agree");
 		

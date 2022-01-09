@@ -16,6 +16,8 @@ public class SignupController extends HttpServlet {
 		MemberService service = new MemberService();
 		int statusCode = service.joinMember(request, response);
 		
+		System.out.println(statusCode);
+		
 		if(statusCode == 201) {
 			// 회원가입 성공했을 때
 			response.sendRedirect("/ridibooksProject/html/index.html");

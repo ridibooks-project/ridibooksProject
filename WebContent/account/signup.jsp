@@ -143,10 +143,10 @@
                             <div class="join_gender_wrapper">
                                 <div class="gen_btn_style">
                                     <div>
-                                        <button type="button" class="gender_ipm ji_style">남</button>
+                                        <button type="button" class="gender_ipm ji_style" >남</button>
                                     </div>
                                     <div>
-                                        <button type="button" class="gender_ipw ji_style">여</button>
+                                        <button type="button" class="gender_ipw ji_style" >여</button>
                                     </div>
                                 </div>
                                 <input type="text" class="gender_input" name="sign_gender" value="">

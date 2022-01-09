@@ -111,8 +111,7 @@ public class MemberDAO {
 		try {
 			conn = getConnection();
 			
-			String sql = "INSERT INTO memberinfo(member_id, member_pw, member_email, member_name, year, gender, marketing_agree, select_agree, signup_date) "
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO memberinfo(member_id, member_pw, member_email, member_name, year, gender, marketing_agree, select_agree, signup_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -128,6 +127,8 @@ public class MemberDAO {
 			
 			// executeUpdate() 값이 얼마인지 확인할 것
 			int count = pstmt.executeUpdate();
+			
+			System.out.println(count);
 			
 			signup = count == 1;
 			
