@@ -424,13 +424,13 @@ birth_input.onblur = () => {
 gender_ip_man.onclick = () => {
     gender_ip_man.style.backgroundColor = "#DBEFFF";
     gender_ip_woman.style.backgroundColor = "white";
-    gender_input.setAttribute('value', '남');
+    gender_input.setAttribute('value', 'M');
 }
 
 gender_ip_woman.onclick = () => {
     gender_ip_man.style.backgroundColor = "white";
     gender_ip_woman.style.backgroundColor = "#DBEFFF";
-    gender_input.setAttribute('value', '여');
+    gender_input.setAttribute('value', 'F');
 }
 
 gender_ip_man.onmouseover = () => {
