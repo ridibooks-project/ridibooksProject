@@ -106,6 +106,11 @@ for (let i = 0; i < 6; i++){
         }
     }
 }
+
+// function handleOnInput(e)  {
+//     e.value = e.value.replace(/[^A-Za-z0-9]/ig, '');
+// }
+  
 //모든 input
 
 // 아이디 input
@@ -129,7 +134,7 @@ id_input.onblur = () => {
         id_input.style.border = "1px solid #E64938";
         id_input.classList.add('redLinePlaceholder');
         input_guide[0].style.display = "none";
-    } else if ((id_input.value.length < 5) || (spe > 0 || upper >0 || kor>0)) {
+    } else if ((id_input.value.length < 5) || (spe == 0) ||( upper == 0) || (kor==0)) {
         error_m_i[0].style.display = "inline-block";
         error_wrong[0].style.display = "inline-block";
         error_require[0].style.display = "none";
@@ -291,7 +296,7 @@ em_input.onblur = () => {
         em_input.style.border = "1px solid #E64938";
         em_input.classList.add('redLinePlaceholder');
         input_guide[3].style.display = "none";
-    } else if ((spe > 0) || (kor > 0) || (em.indexOf("@") == (em.length-1)) || (em.indexOf('@') == -1)){
+    } else if ((spe== 0) || (kor== 0) || (em.indexOf("@") == (em.length-1)) || (em.indexOf('@') == -1)){
         error_m_i[2].style.display = "inline-block";
         error_useUpperance.style.display = "none";
         error_require[2].style.display = "none";
@@ -300,7 +305,7 @@ em_input.onblur = () => {
         input_guide[3].innerHTML = "이메일";
         input_guide[3].style.color = "#E64938";
         em_input.classList.remove('redLinePlaceholder');
-    } else if (upper > 0) {
+    } else if (upper ==0) {
         error_m_i[2].style.display = "inline-block";
         error_require[2].style.display = "none";
         error_useUpperance.style.display = "inline-block";
@@ -354,7 +359,7 @@ name_input.onblur = () => {
         input_guide[4].innerHTML = "이름";
         input_guide[4].style.color = "#E64938";
         name_input.classList.remove('redLinePlaceholder');
-    } else if ((num > 0) || (spe > 0)) {
+    } else if ((num == 0) || (spe == 0)) {
         error_m_i[3].style.display = "inline-block";
         error_require[3].style.display = "none";
         error_wrong[3].style.display = "inline-block";
