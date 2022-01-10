@@ -13,6 +13,9 @@ public class SignupController extends HttpServlet {
 
 	// 회원가입
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		MemberService service = new MemberService();
 		int statusCode = service.joinMember(request, response);
 		
