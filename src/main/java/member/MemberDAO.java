@@ -128,8 +128,6 @@ public class MemberDAO {
 			// executeUpdate() 값이 얼마인지 확인할 것
 			int count = pstmt.executeUpdate();
 			
-			System.out.println(count);
-			
 			signup = count == 1;
 			
 		} catch(SQLException e) {

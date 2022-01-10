@@ -119,20 +119,19 @@ public class MemberService {
 		
 		
 		// ----- 생년월일 확인 -> 공백 입력 시 null 처리
-		if(year.isEmpty()) {
-			year = null;
+		year.replaceAll(" ", "");
+		if(year.isEmpty() || year == null) {
+			year = "0000";
 		}
 		// ----- 생년월일 확인
 		
 		
-		// ----- 성별 확인 -> 이것도 보낼 때 M,F 로 value값을 보내서 보낼 수 있으나 일단 체크하는 중
-		if(gender.equals("남") || gender.equals("M")) {
-			gender = "M";
-		} else if(gender.equals("여") || gender.equals("F")) {
-			gender = "F";
-		} else {
-			gender = null;
+		// ----- 성별 확인
+		gender.replaceAll(" ", "");
+		if(!gender.equals("M") || !gender.equals("F")) {
+			gender = "None";
 		}
+		
 		// ----- 성별 확인
 		
 		
