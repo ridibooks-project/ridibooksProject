@@ -66,13 +66,13 @@ function eo_chbox_click() {
 function check_on(inputVariable) {
     check_gray[inputVariable].style.display = "none";
     check_blue[inputVariable].style.display = "inline-block";
-    checkbox_style[inputVariable].setAttribute('value', "on");
+    checkbox_style[inputVariable].setAttribute('value', "Y");
     checkbox_style[inputVariable].checked = true;
 }
 function check_off(inputVariable) {
     check_blue[inputVariable].style.display = "none";
     check_gray[inputVariable].style.display = "inline-block";
-    checkbox_style[inputVariable].setAttribute('value', "off");
+    checkbox_style[inputVariable].setAttribute('value', "N");
     checkbox_style[inputVariable].checked = false;
 }
 // 체크박스 함수
@@ -479,14 +479,14 @@ for (let i = 0; i < checkbox_style.length; i++){
         }
     }
     opacity_mo_event[i].onclick = () => {
-        if (checkbox_style[i].value == "off") {
+        if (checkbox_style[i].value == "N") {
                 if (i == 0) {
                     for (let j = 1; j < 4; j++){
                         check_on(j);
                     }
                 }
                 check_on(i);
-        } else if(checkbox_style[i].value == "on") {  
+        } else if(checkbox_style[i].value == "Y") {  
                 if (i == 0) {
                     for (let j = 1; j < 4; j++){
                         check_off(j);
