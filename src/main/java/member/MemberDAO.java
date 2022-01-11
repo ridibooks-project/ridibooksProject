@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.Random;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -62,8 +63,8 @@ public class MemberDAO {
 				db_pw = rs.getString("member_pw");
 				db_status = rs.getString("status");
 				
-				if(db_status.equals("1")) {
-					// db_status가 1 일 때 (회원상태가 정상 일 때)
+				if(db_status.equals("0")) {
+					// db_status가 0 일 때 (회원상태가 정상 일 때)
 					if(db_pw.equals(member.getPw())) {
 						
 						sql = "UPDATE memberinfo SET login_date = ?";
@@ -181,8 +182,8 @@ public class MemberDAO {
 				
 				if(db_pw.equals(member.getPwChk())) {
 						
-					// 회원상태(status) 2가 탈퇴상태 이니 2 입력
-					sql = "UPDATE memberinfo SET status = 2";
+					// 회원상태(status) 1이 탈퇴상태 이니 1 입력
+					sql = "UPDATE memberinfo SET status = 1";
 					PreparedStatement pstmt2 = conn.prepareStatement(sql);
 					
 					delete = true;
@@ -212,5 +213,149 @@ public class MemberDAO {
 			}
 		}
 		return delete;
+	}
+	
+	// db - id찾기
+	public String findId(MemberDTO member) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String db_id = "";
+		String db_status = "";
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT member_id, status FROM memberinfo WHERE member_email = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getEmail());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				db_status = rs.getString("status");
+				
+				if(db_status.equals("0")) {
+					// db_status가 0 일 때 (회원상태가 정상 일 때)
+					
+					db_id = rs.getString("member_id");
+					
+				}
+			}
+			rs.close();
+			
+		} catch(SQLException e) {
+//			e.printStackTrace();
+			System.out.println("SQL 예외");
+		} finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return db_id;
+	}
+	
+	// db - pw찾기-1 (아이디, 이메일로 회원가입 여부 확인)
+	public boolean findPw(MemberDTO member) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String db_status = "";
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT member_id, status FROM memberinfo WHERE member_email = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getEmail());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				db_status = rs.getString("status");
+				
+				// db_status가 0 일 때 (회원상태가 정상 일 때)
+				if(db_status.equals("0")) {
+
+					// 입력한 id랑 db의 id가 같다면
+					if(member.getId().equals(rs.getString("member_id"))) {
+						
+						// 임시 비밀번호 발급
+						Random random = new Random();
+						
+						StringBuffer tempPw = new StringBuffer();
+						// 임시 비밀번호 10자리로 지정
+						for(int i=0; i<10; i++) {
+							// 숫자,영문대문자,영문소문자 3개지를 랜덤으로
+							int j = random.nextInt(3);
+							switch(j) {
+							// j가 0일 때 숫자 출력		// 0~9
+							case 0:
+								tempPw.append((random.nextInt(10)));
+								break;
+							// j가 1일 때 소문자 출력		// 아스키코드 97~122 -> a-z
+							case 1:
+								tempPw.append((char) ((int) (random.nextInt(26))+97 ));
+								break;
+							// j가 2일 때 대문자 출력		// 아스키코드 65~90 -> A-Z
+							case 2:
+								tempPw.append((char) ((int) (random.nextInt(26))+65 ));
+								break;
+							}
+						}
+						
+						String newPw = tempPw.toString();
+						member.setPw(newPw);
+						
+						sql = "UPDATE memberinfo SET member_pw VALUES ?";
+						PreparedStatement pstmt2 = conn.prepareStatement(sql);
+						pstmt2.setString(1, member.getPw());
+						
+						pstmt2.close();
+						
+						
+						// 불린 값을 할지 뭘할지 정하고 완성시키기
+					}
+					
+				}
+			}
+			rs.close();
+			
+		} catch(SQLException e) {
+//			e.printStackTrace();
+			System.out.println("SQL 예외");
+		} finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		
+		return false;
 	}
 }
