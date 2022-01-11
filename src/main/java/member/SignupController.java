@@ -13,18 +13,23 @@ public class SignupController extends HttpServlet {
 
 	// 회원가입
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		MemberService service = new MemberService();
 		int statusCode = service.joinMember(request, response);
 		
+		System.out.println(statusCode);
+		
 		if(statusCode == 201) {
 			// 회원가입 성공했을 때
-			response.sendRedirect("#");
+			response.sendRedirect("/ridibooksProject/html/index.html");
 		} else if(statusCode == 400) {
 			// 회원가입 실패했을 때
-			response.sendRedirect("#");
+			response.sendRedirect("/ridibooksProject/account/signup.jsp");
 		} else {
 			// 회원가입 실패했을 때 - 404
-			response.sendRedirect("#");
+			response.sendRedirect("/ridibooksProject/account/signup.jsp");
 		}
 	}
 }

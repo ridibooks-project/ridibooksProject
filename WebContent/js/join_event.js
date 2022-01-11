@@ -54,25 +54,30 @@ function eo_chbox_click() {
     if (checkbox_style[1].checked == true && checkbox_style[2].checked == true && checkbox_style[3].checked == true) {
         check_gray[0].style.display = "none";
         check_blue[0].style.display = "inline-block";
-        checkbox_style[0].setAttribute('value', "on");
+        checkbox_style[0].setAttribute('value', "Y");
         checkbox_style[0].checked = true;
+        error_m_i[5].style.display = "none";
+        error_require[4].style.display = "none";
+        error_wrong[5].style.display = "none";
+        checkbox_wrapper.style.border = "1px solid #D6DEEB";
+        join_ac_wrapper.style.borderBottom = "1px solid #D6DEEB";
     } else {
         check_blue[0].style.display = "none";
         check_gray[0].style.display = "inline-block";
-        checkbox_style[0].setAttribute('value', "off");
+        checkbox_style[0].setAttribute('value', "N");
         checkbox_style[0].checked = false;
     }
 }
 function check_on(inputVariable) {
     check_gray[inputVariable].style.display = "none";
     check_blue[inputVariable].style.display = "inline-block";
-    checkbox_style[inputVariable].setAttribute('value', "on");
+    checkbox_style[inputVariable].setAttribute('value', "Y");
     checkbox_style[inputVariable].checked = true;
 }
 function check_off(inputVariable) {
     check_blue[inputVariable].style.display = "none";
     check_gray[inputVariable].style.display = "inline-block";
-    checkbox_style[inputVariable].setAttribute('value', "off");
+    checkbox_style[inputVariable].setAttribute('value', "N");
     checkbox_style[inputVariable].checked = false;
 }
 // 체크박스 함수
@@ -106,6 +111,11 @@ for (let i = 0; i < 6; i++){
         }
     }
 }
+
+// function handleOnInput(e)  {
+//     e.value = e.value.replace(/[^A-Za-z0-9]/ig, '');
+// }
+  
 //모든 input
 
 // 아이디 input
@@ -129,7 +139,7 @@ id_input.onblur = () => {
         id_input.style.border = "1px solid #E64938";
         id_input.classList.add('redLinePlaceholder');
         input_guide[0].style.display = "none";
-    } else if ((id_input.value.length < 5) || (spe > 0 || upper >0 || kor>0)) {
+    } else if ((id_input.value.length < 5) || (spe == 0) ||( upper == 0) || (kor==0)) {
         error_m_i[0].style.display = "inline-block";
         error_wrong[0].style.display = "inline-block";
         error_require[0].style.display = "none";
@@ -291,7 +301,7 @@ em_input.onblur = () => {
         em_input.style.border = "1px solid #E64938";
         em_input.classList.add('redLinePlaceholder');
         input_guide[3].style.display = "none";
-    } else if ((spe > 0) || (kor > 0) || (em.indexOf("@") == (em.length-1)) || (em.indexOf('@') == -1)){
+    } else if ((spe== 0) || (kor== 0) || (em.indexOf("@") == (em.length-1)) || (em.indexOf('@') == -1)){
         error_m_i[2].style.display = "inline-block";
         error_useUpperance.style.display = "none";
         error_require[2].style.display = "none";
@@ -300,7 +310,7 @@ em_input.onblur = () => {
         input_guide[3].innerHTML = "이메일";
         input_guide[3].style.color = "#E64938";
         em_input.classList.remove('redLinePlaceholder');
-    } else if (upper > 0) {
+    } else if (upper ==0) {
         error_m_i[2].style.display = "inline-block";
         error_require[2].style.display = "none";
         error_useUpperance.style.display = "inline-block";
@@ -354,7 +364,7 @@ name_input.onblur = () => {
         input_guide[4].innerHTML = "이름";
         input_guide[4].style.color = "#E64938";
         name_input.classList.remove('redLinePlaceholder');
-    } else if ((num > 0) || (spe > 0)) {
+    } else if ((num == 0) || (spe == 0)) {
         error_m_i[3].style.display = "inline-block";
         error_require[3].style.display = "none";
         error_wrong[3].style.display = "inline-block";
@@ -415,6 +425,7 @@ birth_input.onblur = () => {
         input_guide[5].style.display = "inline-block";
         input_guide[5].innerHTML = "출생년도";
         input_guide[5].style.color = "#738096";
+        document.querySelector('.hi_ip').value == birth_input.value;
     }
 
 }
@@ -424,13 +435,13 @@ birth_input.onblur = () => {
 gender_ip_man.onclick = () => {
     gender_ip_man.style.backgroundColor = "#DBEFFF";
     gender_ip_woman.style.backgroundColor = "white";
-    gender_input.setAttribute('value', '남');
+    gender_input.setAttribute('value', 'M');
 }
 
 gender_ip_woman.onclick = () => {
     gender_ip_man.style.backgroundColor = "white";
     gender_ip_woman.style.backgroundColor = "#DBEFFF";
-    gender_input.setAttribute('value', '여');
+    gender_input.setAttribute('value', 'F');
 }
 
 gender_ip_man.onmouseover = () => {
@@ -479,14 +490,14 @@ for (let i = 0; i < checkbox_style.length; i++){
         }
     }
     opacity_mo_event[i].onclick = () => {
-        if (checkbox_style[i].value == "off") {
+        if (checkbox_style[i].value == "N") {
                 if (i == 0) {
                     for (let j = 1; j < 4; j++){
                         check_on(j);
                     }
                 }
                 check_on(i);
-        } else if(checkbox_style[i].value == "on") {  
+        } else if(checkbox_style[i].value == "Y") {  
                 if (i == 0) {
                     for (let j = 1; j < 4; j++){
                         check_off(j);
@@ -516,3 +527,50 @@ for (let i = 0; i < checkbox_style.length; i++){
     }
 }
 // 체크박스 설정
+
+//submit controller
+let jcb = document.querySelector('.join_complete_btn');
+let checkbox_wrapper = document.querySelector('.join_checkbox_wrapper');
+let join_ac_wrapper = document.querySelector('.join_ac_wrapper');
+jcb.onclick = (e) => {
+    e.preventDefault();
+    if (error_m_i[0].style.display == 'inline-block') {
+        //id input
+        id_input.focus();
+    } else if (error_m_i[1].style.display == 'inline-block') {
+        //pw ip, rpw ip
+        pw_input.focus();
+    } else if (error_m_i[2].style.display == 'inline-block') {
+        //email ip
+        em_input.focus();
+    } else if (error_m_i[3].style.display == 'inline-block') {
+        //name ip
+        name_input.focus();
+    }else if (checkbox_style[1].value == "N") {
+        //checkbox
+        //mi 5 rq 4 wr5 E64938
+        //border-bottom: 1px solid #D6DEEB;
+        //border: 1px solid #D6DEEB;
+        checkbox_style[1].focus();
+        error_m_i[5].style.display = "inline-block";
+        error_require[4].style.display = "inline-block";
+        error_wrong[5].style.display = "none";
+        checkbox_wrapper.style.border = "1px solid #E64938";
+        join_ac_wrapper.style.borderBottom = "1px solid #E64938";
+    } else if (checkbox_style[4].value == "N") {
+        checkbox_style[1].focus();
+        error_m_i[5].style.display = "inline-block";
+        error_require[4].style.display = "none";
+        error_wrong[5].style.display = "inline-block";
+        checkbox_wrapper.style.border = "1px solid #E64938";
+        join_ac_wrapper.style.borderBottom = "1px solid #E64938";
+    } else {
+        error_m_i[5].style.display = "none";
+        error_require[4].style.display = "none";
+        error_wrong[5].style.display = "none";
+        checkbox_wrapper.style.border = "1px solid #D6DEEB";
+        join_ac_wrapper.style.borderBottom = "1px solid #D6DEEB";
+        document.querySelector('.join_form').submit();
+        //gender, name -> 빈값 null로
+    }
+}
