@@ -118,23 +118,6 @@ public class MemberService {
 		// ----- 이름 패턴 확인
 		
 		
-		// ----- 생년월일 확인 -> 공백 입력 시 null 처리
-		year.replaceAll(" ", "");
-		if(year.isEmpty() || year == null) {
-			year = "0000";
-		}
-		// ----- 생년월일 확인
-		
-		
-		// ----- 성별 확인
-		gender.replaceAll(" ", "");
-		if(!gender.equals("M") || !gender.equals("F")) {
-			gender = "None";
-		}
-		
-		// ----- 성별 확인
-		
-		
 		// ----- 선택동의 값 설정
 		// 이럴 필요 없이 html에서 value값을 넣으면 체크 시 value값이 넘어오지 않을까 - 추후 확인 후 변경해볼 것
 		if(marketing_agree == null) {
