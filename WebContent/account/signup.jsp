@@ -143,10 +143,10 @@
                             <div class="join_gender_wrapper">
                                 <div class="gen_btn_style">
                                     <div>
-                                        <button type="button" class="gender_ipm ji_style" >남</button>
+                                        <button type="button" class="gender_ipm ji_style">남</button>
                                     </div>
                                     <div>
-                                        <button type="button" class="gender_ipw ji_style" >여</button>
+                                        <button type="button" class="gender_ipw ji_style">여</button>
                                     </div>
                                 </div>
                                 <input type="text" class="gender_input" name="sign_gender" value="">
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="ec_style">
                                     <div>
-                                        <input type="checkbox" value="Y" name="marketing_agree"
+                                        <input type="checkbox" value="off" name="marketing_agree"
                                             class="eo_checkbox eo2 checkbox_style">
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>
@@ -193,7 +193,7 @@
                                 </div>
                                 <div class="joinEcFlex ec_style">
                                     <div>
-                                        <input type="checkbox" value="Y" name="select_agree"
+                                        <input type="checkbox" value="off" name="select_agree"
                                             class="eo_checkbox eo3 checkbox_style">
                                         <span class="check_blue">
                                             <i class="far fa-check-circle" style="color: #1F8CE6;"></i>

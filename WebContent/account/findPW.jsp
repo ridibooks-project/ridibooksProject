@@ -15,7 +15,7 @@
 	
 		<section>
         	<div class="findPW_wrap">
-            	<form action="../../src/main/java/member/find/" method="get">
+            	<form action="/find/controller" method="post">
                 	<span class="findPW_hd_text">비밀번호 재설정</span>
                 	<div class="ip_box findPW_ip_box">
                     	<label class="findPW_ip_label" for="">

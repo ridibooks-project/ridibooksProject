@@ -29,7 +29,7 @@ public class SignupController extends HttpServlet {
 			response.sendRedirect("/ridibooksProject/account/signup.jsp");
 		} else {
 			// 회원가입 실패했을 때 - 404
-			response.sendRedirect("/ridibooksProject/account/signup.jsp");
+			response.sendRedirect("/ridibooksProject/signup.jsp");
 		}
 	}
 }

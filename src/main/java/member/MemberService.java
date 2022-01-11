@@ -17,8 +17,8 @@ public class MemberService {
 		String pw = request.getParameter("login_pw");
 		String stay_login = request.getParameter("stay_login");
 		
-		// 아이디 또는 비밀번호가 null일 경우
-		if(id == null || pw == null) {
+		// 아이디 또는 비밀번호가 null이거나 공백일경우
+		if( (id.isEmpty() || id == null) || (pw.isEmpty() || pw == null) ) {
 			
 			statusCode = HttpServletResponse.SC_BAD_REQUEST;
 			
@@ -119,20 +119,19 @@ public class MemberService {
 		
 		
 		// ----- 생년월일 확인 -> 공백 입력 시 null 처리
-		if(year.isEmpty()) {
-			year = null;
+		year.replaceAll(" ", "");
+		if(year.isEmpty() || year == null) {
+			year = "0000";
 		}
 		// ----- 생년월일 확인
 		
 		
-		// ----- 성별 확인 -> 이것도 보낼 때 M,F 로 value값을 보내서 보낼 수 있으나 일단 체크하는 중
-		if(gender.equals("남") || gender.equals("M")) {
-			gender = "M";
-		} else if(gender.equals("여") || gender.equals("F")) {
-			gender = "F";
-		} else {
-			gender = null;
+		// ----- 성별 확인
+		gender.replaceAll(" ", "");
+		if(!gender.equals("M") || !gender.equals("F")) {
+			gender = "None";
 		}
+		
 		// ----- 성별 확인
 		
 		
@@ -227,6 +226,63 @@ public class MemberService {
 //			session.invalidate();
 		}
 		return statusCode;
+	}
+	
+	// 아이디 찾기
+	public int findId(HttpServletRequest request, HttpServletResponse response) {
+		String email = request.getParameter("find_email");
+		
+		// 받은 이메일이 비어있거나 null일 경우
+		if(email.isEmpty() || email == null) {
+			
+			statusCode = HttpServletResponse.SC_BAD_REQUEST;
+			
+			return statusCode;
+		}
+		
+		MemberDTO member = new MemberDTO();
+		member.setEmail(email);
+		
+		MemberDAO dao = new MemberDAO();
+		String findId = dao.findId(member);
+		
+		if(findId.isEmpty() || findId == null) {
+			// 찾아온 아이디가 없을 때
+			statusCode = HttpServletResponse.SC_NOT_FOUND;
+		} else {
+			// 있을 때
+			statusCode = HttpServletResponse.SC_OK;
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("findId", findId);
+		}
+		
+		return statusCode;
+	}
+	
+	// 비밀번호 찾기
+	public int findPw(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("find_id");
+		String email = request.getParameter("find_email");
+		
+		// 전달 받은 값이 공백이거나 null일 경우
+		if( (id.isEmpty() || id == null) || (email.isEmpty() || email == null) ) {
+			statusCode = HttpServletResponse.SC_BAD_REQUEST;
+			
+			return statusCode;
+		}
+		
+		MemberDTO member = new MemberDTO();
+		member.setId(id);
+		member.setEmail(email);
+		
+		MemberDAO dao = new MemberDAO();
+		boolean findPw = dao.findPw(member);
+		
+		
+	
+		return 0;
 	}
 
 }
